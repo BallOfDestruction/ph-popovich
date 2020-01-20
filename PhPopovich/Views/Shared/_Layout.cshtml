@@ -1,0 +1,46 @@
+﻿@using EnglishApp.Models
+@using EnglishApp.Models.Pages
+@using EnglishApp.ViewModels.Common
+@inject Context ContextDb
+@inject Context Database
+@{
+    var main = Database.MainPageModels.FirstOrDefault();
+
+	IPage page = null;
+
+	if (Context.Request.Path == "/")
+	{
+		page = main;
+	}
+
+	var headerViewModel = new HeaderViewModel()
+	{
+		Title = page?.PageTitle,
+	};
+}
+
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta/>
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>@(page?.PageTitle)</title>
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="/css/site.css" rel="stylesheet" type="text/css" />
+    
+    <link href="/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    
+    <script src="/lib/jQuery/dist/jquery.js"></script>
+    <script src="/lib/bootstrap/dist/js/bootstrap.js"></script>
+</head>
+<body>
+ 
+@Html.Partial("Header", headerViewModel)
+
+@RenderBody()
+
+</body>
+</html>

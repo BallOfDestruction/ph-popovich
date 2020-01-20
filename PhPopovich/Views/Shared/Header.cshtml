@@ -1,0 +1,21 @@
+﻿@model EnglishApp.ViewModels.Common.HeaderViewModel
+
+@{
+    Layout = null;
+}
+
+<header>
+    <nav class="navbar navbar-inverse">
+	    <div class="container-fluid">
+
+		    <div class="nav-header">
+			    <a class="navbar-brand" href="/">@(Model.CompanyName)</a>
+		    </div>
+
+		    <span class="navbar-text navbar-left">
+			    @(Model.Title)
+		    </span>
+
+	    </div>
+    </nav>
+</header>
