@@ -14,7 +14,7 @@ namespace PhPopovich
         public static IWebHost BuildWebHost(string[] args)
         {
             return WebHost.CreateDefaultBuilder(args)
-                .UseKestrel()
+                //.UseKestrel()
                 .UseStartup<Startup>()
                 .UseIISIntegration()
                 .UseContentRoot(Directory.GetCurrentDirectory())
