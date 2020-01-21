@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
-using EnglishApp.Controllers.cms;
+using PhPopovich.Controllers.cms;
 
-namespace EnglishApp.Models
+namespace PhPopovich.Models
 {
     [Access]
     public class WordModel : Entity<WordModel>

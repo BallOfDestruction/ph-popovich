@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace EnglishApp.ViewModels.Cms
+namespace PhPopovich.ViewModels.Cms
 {
     public class FileViewModel
     {

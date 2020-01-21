@@ -1,7 +1,7 @@
-﻿using EnglishApp.Models;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using PhPopovich.Models;
 
-namespace EnglishApp.Controllers
+namespace PhPopovich.Controllers
 {
     public class CommonController : Controller
     {

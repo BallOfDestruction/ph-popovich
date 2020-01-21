@@ -6,23 +6,23 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
 using System.Threading.Tasks;
-using EnglishApp.Models;
-using EnglishApp.StaticHelpers;
-using EnglishApp.ViewModels.Cms;
-using EntityFrameworkPaginateCore;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using PhPopovich.EntityFrameworkPaginateCore;
+using PhPopovich.Models;
+using PhPopovich.StaticHelpers;
+using PhPopovich.ViewModels.Cms;
 
-namespace EnglishApp.Controllers.cms
+namespace PhPopovich.Controllers.cms
 {
     public class HomeCmsController : CommonController
     {
-        private readonly IHostingEnvironment _appEnvironment;
+        private readonly IWebHostEnvironment _appEnvironment;
 
-        public HomeCmsController(Context context, IHostingEnvironment appEnvironment)
+        public HomeCmsController(Context context, IWebHostEnvironment appEnvironment)
         {
             _appEnvironment = appEnvironment;
             Context = context;

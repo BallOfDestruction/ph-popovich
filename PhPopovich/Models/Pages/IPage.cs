@@ -1,4 +1,4 @@
-﻿namespace EnglishApp.Models.Pages
+﻿namespace PhPopovich.Models.Pages
 {
     public interface IPage
     {

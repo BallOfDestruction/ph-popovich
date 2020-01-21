@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using EnglishApp.Models;
+using PhPopovich.Models;
 
-namespace EnglishApp.StaticHelpers
+namespace PhPopovich.StaticHelpers
 {
     public class Types
     {

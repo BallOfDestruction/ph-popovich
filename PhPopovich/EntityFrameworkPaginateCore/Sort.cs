@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq.Expressions;
 
-namespace EntityFrameworkPaginateCore
+namespace PhPopovich.EntityFrameworkPaginateCore
 {
     internal class Sort<T, TKey>
     {

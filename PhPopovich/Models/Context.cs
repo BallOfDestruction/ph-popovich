@@ -1,8 +1,8 @@
 ﻿using System.Linq;
-using EnglishApp.Models.Pages;
 using Microsoft.EntityFrameworkCore;
+using PhPopovich.Models.Pages;
 
-namespace EnglishApp.Models
+namespace PhPopovich.Models
 {
     public class Context : DbContext
     {

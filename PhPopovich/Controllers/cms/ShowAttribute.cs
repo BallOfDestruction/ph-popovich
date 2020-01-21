@@ -1,4 +1,4 @@
-﻿namespace EnglishApp.Controllers.cms
+﻿namespace PhPopovich.Controllers.cms
 {
     /// <summary>
     /// Показывает нужно ли отображать это свойство в списке\при детализации\редактировании

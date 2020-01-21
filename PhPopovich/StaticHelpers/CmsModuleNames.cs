@@ -1,4 +1,4 @@
-﻿namespace EnglishApp.StaticHelpers
+﻿namespace PhPopovich.StaticHelpers
 {
     public class CmsModuleNames
     {

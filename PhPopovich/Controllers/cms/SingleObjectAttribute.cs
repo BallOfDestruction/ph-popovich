@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace EnglishApp.Controllers.cms
+namespace PhPopovich.Controllers.cms
 {
     public class SingleObjectAttribute : Attribute
     {

@@ -1,7 +1,7 @@
 ﻿using System.Net;
 using System.Net.Mail;
 
-namespace EnglishApp.StaticHelpers
+namespace PhPopovich.StaticHelpers
 {
     public class EmailService
     {

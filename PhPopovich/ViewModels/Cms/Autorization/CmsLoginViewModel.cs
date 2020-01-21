@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace EnglishApp.ViewModels.Cms.Autorization
+namespace PhPopovich.ViewModels.Cms.Autorization
 {
     [DisplayName("Войдите")]
     public class CmsLoginViewModel

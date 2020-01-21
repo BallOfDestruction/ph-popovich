@@ -1,15 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using EnglishApp.Models;
-using EnglishApp.ViewModels.Cms.Autorization;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
+using PhPopovich.Models;
+using PhPopovich.ViewModels.Cms.Autorization;
 
-namespace EnglishApp.Controllers.cms
+namespace PhPopovich.Controllers.cms
 {
     public class LoginCmsController : CommonController
     {

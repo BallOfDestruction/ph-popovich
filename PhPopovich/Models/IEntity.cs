@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace EnglishApp.Models
+namespace PhPopovich.Models
 {
     public interface IEntity
     {

@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using EnglishApp.Controllers.cms;
+using PhPopovich.Controllers.cms;
 
-namespace EnglishApp.Models.Pages
+namespace PhPopovich.Models.Pages
 {
     [SingleObject]
     [Access(false, false, true, false)]

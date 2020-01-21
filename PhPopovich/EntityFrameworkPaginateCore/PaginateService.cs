@@ -3,7 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 
-namespace EntityFrameworkPaginateCore
+namespace PhPopovich.EntityFrameworkPaginateCore
 {
     public static class PaginateService
     {

@@ -1,10 +1,10 @@
 ﻿using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using EnglishApp.Controllers.cms;
-using EntityFrameworkPaginateCore;
+using PhPopovich.Controllers.cms;
+using PhPopovich.EntityFrameworkPaginateCore;
 
-namespace EnglishApp.Models
+namespace PhPopovich.Models
 {
     public class Entity<T> : ISortFilterEntity<T>
         where T : IEntity

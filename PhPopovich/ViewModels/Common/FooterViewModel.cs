@@ -1,6 +1,6 @@
-﻿using EnglishApp.StaticHelpers;
+﻿using PhPopovich.StaticHelpers;
 
-namespace EnglishApp.ViewModels.Common
+namespace PhPopovich.ViewModels.Common
 {
     public class FooterViewModel
     {

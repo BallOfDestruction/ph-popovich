@@ -1,4 +1,4 @@
-﻿namespace EnglishApp.Models
+﻿namespace PhPopovich.Models
 {
     public class FileModel : Entity<FileModel>
     {

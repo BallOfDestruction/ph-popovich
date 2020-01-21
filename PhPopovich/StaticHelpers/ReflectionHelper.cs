@@ -4,11 +4,11 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Reflection;
-using EnglishApp.Controllers.cms;
-using EnglishApp.Models;
 using Microsoft.EntityFrameworkCore;
+using PhPopovich.Controllers.cms;
+using PhPopovich.Models;
 
-namespace EnglishApp.StaticHelpers
+namespace PhPopovich.StaticHelpers
 {
     public static class ReflectionHelper
     {

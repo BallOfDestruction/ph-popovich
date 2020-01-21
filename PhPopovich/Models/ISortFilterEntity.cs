@@ -1,6 +1,6 @@
-﻿using EntityFrameworkPaginateCore;
+﻿using PhPopovich.EntityFrameworkPaginateCore;
 
-namespace EnglishApp.Models
+namespace PhPopovich.Models
 {
     public interface ISortFilterEntity<T> : IEntity 
         where T : IEntity

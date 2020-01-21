@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 
-namespace EnglishApp.StaticHelpers
+namespace PhPopovich.StaticHelpers
 {
     public static class CookieHelper
     {

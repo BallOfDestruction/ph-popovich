@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace EntityFrameworkPaginateCore
+namespace PhPopovich.EntityFrameworkPaginateCore
 {
     /// <summary>
     /// Stores the filtered, sorted and paginated data for the given entity type.

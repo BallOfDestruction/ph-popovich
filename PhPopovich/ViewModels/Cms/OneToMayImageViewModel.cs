@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace EnglishApp.ViewModels.Cms
+namespace PhPopovich.ViewModels.Cms
 {
     public class OneToMayImageViewModel
     {

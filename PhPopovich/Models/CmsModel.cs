@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
-using EnglishApp.Controllers.cms;
+using PhPopovich.Controllers.cms;
 
-namespace EnglishApp.Models
+namespace PhPopovich.Models
 {
     [Access(false, false,true,false)]
     public class CmsModel : Entity<CmsModel>

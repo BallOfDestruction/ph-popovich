@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace EnglishApp.Controllers.cms
+namespace PhPopovich.Controllers.cms
 {
     /// <summary>
     /// Указывается у полей, у которых нужно вывести заголовок
