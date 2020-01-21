@@ -5,9 +5,6 @@
     Layout = "_Layout";
 }
 
-@Html.Partial("Main/Header")
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,10 +17,6 @@
 
     <link type="text/css" rel="StyleSheet" href="/src/shop.css" />
     <style>
-
-
-
-
         font-face {
             font-family: "FontAwesome";
             font-style: normal;
@@ -74,11 +67,6 @@
         //------------UCOZ-JS-END-----------</script>
 
     <style type="text/css">
-
-
-
-
-
         .UhideBlock {
             display: none;
         }
@@ -97,32 +85,10 @@
 </head>
 <body class="base">
     <div class="cont-wrap">
+
+        @Html.Partial("Main/Header")
+
         <!--U1AHEADER1Z-->
-        <header class="header">
-            <div class="upper-container">
-                <div class="header-container">
-                    <div class="logo-wrap">
-                        <a class="logo-lnk" href="https://ph-popovitch.ucoz.net/" title="Главная">Персональный сайт</a>
-                    </div>
-                    <div class="mobile-menu-list">
-                        <div class="show-menu material-icons" id="show-menu">menu</div>
-                    </div>
-                    <div class="main-menu">
-                        <nav id="catmenu">
-                            <!-- <sblock_nmenu> -->
-                            <!-- <bc> --><div id="uNMenuDiv1" class="uMenuV">
-                                <ul class="uMenuRoot">
-                                    <li><a class=" uMenuItemA" href="/"><span>Главная страница</span></a></li>
-                                    <li><a href="/index/0-2"><span>Информация о сайте</span></a></li>
-                                </ul>
-                            </div><!-- </bc> -->
-                            <!-- </sblock_nmenu> -->
-                            <div class="clr"></div>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </header>
         <!--/U1AHEADER1Z-->
         <!--U1PROMO1Z-->
         <div class="promo">
