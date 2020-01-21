@@ -27,14 +27,14 @@ namespace EnglishApp.Controllers.cms
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(CmsLoginViewModel cmsLoginViewModel)
         {
-            var admin = Context.AdminModels.FirstOrDefault(w => string.Equals(w.Login, cmsLoginViewModel.Login, StringComparison.CurrentCultureIgnoreCase) && w.Password == cmsLoginViewModel.Password);
+            var admin = Context.AdminModels.FirstOrDefault(w => w.Login == cmsLoginViewModel.Login && w.Password == cmsLoginViewModel.Password);
             if (admin == null)
             {
                 return RedirectToAction("Index");
             }
 
             await Authenticate(cmsLoginViewModel.Login);
-            return RedirectToAction("GetList", "HomeCms", new {type = "AdminModel"});
+            return RedirectToAction("GetList", "HomeCms", new { type = "AdminModel" });
         }
 
         private async Task Authenticate(string userName)

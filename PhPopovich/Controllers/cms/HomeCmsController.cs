@@ -33,7 +33,7 @@ namespace EnglishApp.Controllers.cms
         {
             var t = Type.GetType(App.Name + ".Models." + type);
             if (CheckIsSingle(t))
-                return RedirectToAction("EditFirst", new {type});
+                return RedirectToAction("EditFirst", new { type });
 
             ViewBag.Type = t;
             ViewBag.NameType = type;
@@ -92,8 +92,8 @@ namespace EnglishApp.Controllers.cms
             var filters = objectType.GetDefaultFilters(filter) ?? new Filters<T>();
 
             var sorted = objectType.GetDefaultSorted() ?? new Sorts<T>();
-
-            sorted.Add(true, arg => (arg as IEntity).DateCreated, true);
+            //TODO Сортировка отвалилась чего-то
+            //sorted.Add(true, arg => (arg as IEntity).DateCreated, true);
 
             return list.PaginateAsync(pageNumber, pageSize, sorted, filters);
         }
@@ -115,13 +115,13 @@ namespace EnglishApp.Controllers.cms
             switch (desc)
             {
                 case DirectionSort.Asc:
-                    c = ((IQueryable<T>) list).OrderBy(orderExpression);
+                    c = ((IQueryable<T>)list).OrderBy(orderExpression);
                     break;
                 case DirectionSort.Desc:
-                    c = ((IQueryable<T>) list).OrderByDescending(orderExpression);
+                    c = ((IQueryable<T>)list).OrderByDescending(orderExpression);
                     break;
                 default:
-                    c = ((IQueryable<T>) list).OrderBy(orderExpression);
+                    c = ((IQueryable<T>)list).OrderBy(orderExpression);
                     break;
             }
 
@@ -144,12 +144,12 @@ namespace EnglishApp.Controllers.cms
             var t = Type.GetType(App.Name + ".Models." + type);
 
             if (CheckIsSingle(t))
-                return RedirectToAction("EditFirst", new {type});
+                return RedirectToAction("EditFirst", new { type });
 
             dynamic dynamicObject = Activator.CreateInstance(t);
             Delete(dynamicObject, id);
 
-            return RedirectToAction("GetList", new {type});
+            return RedirectToAction("GetList", new { type });
         }
 
         // ReSharper disable once UnusedParameter.Local
@@ -220,7 +220,7 @@ namespace EnglishApp.Controllers.cms
             var t = Type.GetType(App.Name + "Models." + type);
 
             if (CheckIsSingle(t))
-                return RedirectToAction("EditFirst", new {type});
+                return RedirectToAction("EditFirst", new { type });
 
             dynamic dynamicObject = Activator.CreateInstance(t);
             ViewBag.NameType = type;
@@ -238,7 +238,7 @@ namespace EnglishApp.Controllers.cms
 
             if (first == null) return NotFound();
 
-            return RedirectToAction("Edit", new {type, id = first.Id});
+            return RedirectToAction("Edit", new { type, id = first.Id });
         }
 
         // ReSharper disable once UnusedParameter.Local
@@ -266,7 +266,7 @@ namespace EnglishApp.Controllers.cms
         {
             var keys = Request.Form.Keys?.Select(w => w.ToLower()).ToList() ?? new List<string>();
 
-            if (!keys.Contains("type") || !keys.Contains("id")) RedirectToAction("GetList", new {type = "Order"});
+            if (!keys.Contains("type") || !keys.Contains("id")) RedirectToAction("GetList", new { type = "Order" });
 
             var typeName = Request.Form["type"];
             var id = Request.Form["id"];
@@ -316,8 +316,8 @@ namespace EnglishApp.Controllers.cms
             Context.SaveChanges();
 
             return CheckIsSingle(type)
-                ? RedirectToAction("EditFirst", new {type = typeName})
-                : RedirectToAction("GetList", new {type = typeName});
+                ? RedirectToAction("EditFirst", new { type = typeName })
+                : RedirectToAction("GetList", new { type = typeName });
         }
 
         [HttpPost]
@@ -326,13 +326,13 @@ namespace EnglishApp.Controllers.cms
         {
             var keys = Request.Form.Keys?.Select(w => w.ToLower()).ToList() ?? new List<string>();
 
-            if (!keys.Contains("type")) RedirectToAction("GetList", new {type = "Order"});
+            if (!keys.Contains("type")) RedirectToAction("GetList", new { type = "Order" });
 
             var typeName = Request.Form["type"];
             var type = Type.GetType(App.Name + ".Models." + typeName);
 
             if (CheckIsSingle(type))
-                return RedirectToAction("EditFirst", new {type});
+                return RedirectToAction("EditFirst", new { type });
 
             var properties = type.GetProperties();
             var newObject = Activator.CreateInstance(type);
@@ -378,7 +378,7 @@ namespace EnglishApp.Controllers.cms
             Context.Add(newObject);
             Context.SaveChanges();
 
-            return RedirectToAction("GetList", new {type = typeName});
+            return RedirectToAction("GetList", new { type = typeName });
         }
 
         #region FileWork
