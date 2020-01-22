@@ -53,7 +53,7 @@ namespace PhPopovich.Controllers.cms
                 CookieHelper.SetFilter(localFilter, HttpContext);
             }
 
-            var pageResult = (await Paginate(dynamicObject, includeSets, t, page + 1, 20, null, localFilter));
+            var pageResult = await Paginate(dynamicObject, includeSets, t, page + 1, 20, null, localFilter);
             var result = ProviderPage(dynamicObject, pageResult);
             var sortedSet = result.Results;
             ViewBag.PageCount = result.PageCount;

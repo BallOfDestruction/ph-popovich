@@ -23,7 +23,19 @@ namespace PhPopovich.Models
       
         public DbSet<UserModel> Users { get; set; }
 
-        public DbSet<WordModel> Words { get; set; }
+        public DbSet<MenuModel> Menus { get; set; }
+
+        public DbSet<AboutPageModel> AboutPageModels { get; set; }
+
+        public DbSet<ServicesPageModel> ServicesPageModels { get; set; }
+
+        public DbSet<ProjectsPageModel> ProjectsPageModels { get; set; }
+
+        public DbSet<OrderPageModel> OrderPageModels { get; set; }
+
+        public DbSet<ContactsPageModel> ContactsPageModels { get; set; }
+
+        public DbSet<BlogPageModel> BlogPageModels { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

@@ -1,27 +1,26 @@
 ﻿using System.Linq;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using PhPopovich.Models;
-using PhPopovich.ViewModels.Home;
+using PhPopovich.ViewModels.Order;
 
 namespace PhPopovich.Controllers
 {
-    public class HomeController : CommonController
+    public class OrderController : CommonController
     {
-        public HomeController(Context context)
+        public OrderController(Context context)
         {
             Context = context;
         }
 
         public IActionResult Index()
         {
-            var home = new HomePageViewModel()
+            var home = new OrderPageViewModel()
             {
                 HeaderViewModel = GetHeader(),
-                Page = Context.MainPageModels.Include(w => w.ImageModel).FirstOrDefault(),
+                Page = Context.OrderPageModels.FirstOrDefault(),
             };
             home.HeaderViewModel.Title = home.HeaderViewModel.CompanyName;
-            home.HeaderViewModel.CurrentPage = Menu.Main;
+            home.HeaderViewModel.CurrentPage = Menu.Order;
 
             return View(home);
         }

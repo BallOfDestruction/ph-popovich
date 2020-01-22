@@ -1,4 +1,6 @@
-﻿namespace PhPopovich.ViewModels.Common
+﻿using PhPopovich.Models;
+
+namespace PhPopovich.ViewModels.Common
 {
     public class MenuViewModel
     {
@@ -8,14 +10,17 @@
 
         public bool IsCurrent { get; set; }
 
+        public Menu Menu { get; set; }
+
         public MenuViewModel()
         {
             
         }
 
-        public MenuViewModel(string title, string href, bool isCurrent = false)
+        public MenuViewModel(string title, string href, Menu menu, bool isCurrent = false)
         {
             Title = title;
+            Menu = menu;
             Href = href;
             IsCurrent = isCurrent;
         }

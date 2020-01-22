@@ -1,27 +1,26 @@
 ﻿using System.Linq;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using PhPopovich.Models;
-using PhPopovich.ViewModels.Home;
+using PhPopovich.ViewModels.Services;
 
 namespace PhPopovich.Controllers
 {
-    public class HomeController : CommonController
+    public class ServicesController : CommonController
     {
-        public HomeController(Context context)
+        public ServicesController(Context context)
         {
             Context = context;
         }
 
         public IActionResult Index()
         {
-            var home = new HomePageViewModel()
+            var home = new ServicesPageViewModel()
             {
                 HeaderViewModel = GetHeader(),
-                Page = Context.MainPageModels.Include(w => w.ImageModel).FirstOrDefault(),
+                Page = Context.ServicesPageModels.FirstOrDefault(),
             };
             home.HeaderViewModel.Title = home.HeaderViewModel.CompanyName;
-            home.HeaderViewModel.CurrentPage = Menu.Main;
+            home.HeaderViewModel.CurrentPage = Menu.Services;
 
             return View(home);
         }
