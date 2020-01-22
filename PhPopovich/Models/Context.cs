@@ -29,8 +29,12 @@ namespace PhPopovich.Models
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<ImageModel>().HasOne(w => w.MainPageModel).WithOne(w => w.ImageModel)
-                .HasForeignKey<MainPageModel>(w => w.ImageModelId).OnDelete(DeleteBehavior.SetNull);
+            modelBuilder.Entity<ImageModel>()
+                .HasOne(w => w.MainPageModel)
+                .WithOne(w => w.ImageModel)
+                .IsRequired()
+                .HasForeignKey<MainPageModel>(w => w.ImageModelId)
+                .OnDelete(DeleteBehavior.SetNull);
         }
 
         public IQueryable<T> GetDbSet<T>(T type)

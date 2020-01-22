@@ -18,6 +18,7 @@ namespace PhPopovich.Models.Pages
 
         [Show(false, false, true, true)]
         [DisplayName("Изображение")]
+        [Required]
         public ImageModel ImageModel { get; set; }
     }
 }

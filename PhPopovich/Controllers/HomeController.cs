@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using PhPopovich.Models;
 using PhPopovich.ViewModels.Common;
 using PhPopovich.ViewModels.Home;
@@ -31,7 +32,7 @@ namespace PhPopovich.Controllers
                         new MenuViewModel("Блог", "/blog"),
                     }
                 },
-                Page = Context.MainPageModels.FirstOrDefault()
+                Page = Context.MainPageModels.Include(w => w.ImageModel).FirstOrDefault()
             };
             home.HeaderViewModel.Title = home.HeaderViewModel.CompanyName;
 
