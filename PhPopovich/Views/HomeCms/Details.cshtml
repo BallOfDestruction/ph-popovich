@@ -54,29 +54,29 @@
                             {
                                 if (propertyType.IsArray || propertyType.GetInterfaces().Any(w => w == ienumerableType))
                                 {
-                                    var value = (IEnumerable)property.GetValue(Model, null);
+                                    var value = (IEnumerable) property.GetValue(Model, null);
 
                                     foreach (var val in value)
                                     {
                                         <div class="col-md-12" style="color: #ff0000; height: 50px;"></div>
-                                        @Html.PartialAsync("CMS/DetailsInnerObject", val)
+                                        @await Html.PartialAsync("CMS/DetailsInnerObject", val)
                                     }
                                 }
                                 else
                                 {
-                                    var value = (object)property.GetValue(Model, null);
-                                    @Html.PartialAsync("CMS/DetailsInnerObject", value)
+                                    var value = (object) property.GetValue(Model, null);
+                                    @await Html.PartialAsync("CMS/DetailsInnerObject", value)
                                 }
                             }
                             else
                             {
-                                var value = (string)ReflectionHelper.GetValuePropertyAsString(property, Model);
+                                var value = (string) ReflectionHelper.GetValuePropertyAsString(property, Model);
                                 @Html.DisplayFor(model => value)
                             }
 
                         </div>
                     </div>
-                            }
+                }
             </div>
         </div>
     <div>

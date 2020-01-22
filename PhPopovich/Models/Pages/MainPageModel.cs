@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using PhPopovich.Controllers.cms;
 
@@ -12,8 +13,11 @@ namespace PhPopovich.Models.Pages
         [DataType(DataType.Html)]
         public string MainTitle { get; set; }
 
-        [DisplayName("Под текст")]
-        [DataType(DataType.Html)]
-        public string MainSubTitle { get; set; }
+        [Show(false, false, false, false)]
+        public Guid? ImageModelId { get; set; }
+
+        [Show(false, false, true, true)]
+        [DisplayName("Изображение")]
+        public ImageModel ImageModel { get; set; }
     }
 }

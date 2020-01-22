@@ -4,7 +4,7 @@ namespace PhPopovich.ViewModels.Cms
 {
     public class ImageViewModel
     {
-        public Guid Id { get; set; }
+        public string PropertyName { get; set; }
 
         public Guid ImageId { get; set; }
 

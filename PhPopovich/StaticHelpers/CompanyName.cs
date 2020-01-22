@@ -4,6 +4,6 @@
     {
         public static string Name { get; } = "PhPopovich";
 
-        public static string CompanyName { get; } = "Catsoft";
+        public static string CompanyName { get; } = "Диана Попович";
     }
 }

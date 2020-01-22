@@ -1,6 +1,8 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using PhPopovich.Controllers.cms;
+using PhPopovich.Models.Pages;
 
 namespace PhPopovich.Models
 {
@@ -14,5 +16,11 @@ namespace PhPopovich.Models
         public string ImageType { get; set; }
 
         public string Extension { get; set; }
+
+
+        [Show(false, false, false, false)]
+        public Guid? MainPageModelId { get; set; }
+
+        public MainPageModel MainPageModel { get; set; }
     }
 }

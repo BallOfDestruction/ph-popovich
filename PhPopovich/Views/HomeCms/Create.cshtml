@@ -71,7 +71,7 @@
                             </span>
                         </div>
                         <div class="col-md-10" id="@(fileViewModel.Id)">
-                            @Html.Partial("File", fileViewModel)
+                            @await Html.PartialAsync("File", fileViewModel)
                         </div>
                     </div>
                 </div>
@@ -87,7 +87,7 @@
                 var image = propertyInfo.GetValue(Model) as ImageModel;
                 var imageViewModel = new ImageViewModel()
                 {
-                    Id = image.Id,
+                    PropertyName = propertyInfo.Name,
                     ImageId = image.Id,
                     Url = image.Url,
                 };
@@ -99,8 +99,8 @@
                                 @Html.DisplayName(name)
                             </span>
                         </div>
-                        <div class="col-md-10" id="@(imageViewModel.Id)">
-                            @Html.Partial("Image", imageViewModel)
+                        <div class="col-md-10" id="@(imageViewModel.PropertyName)">
+                            @await Html.PartialAsync("Image", imageViewModel)
                         </div>
                     </div>
                 </div>

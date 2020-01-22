@@ -278,7 +278,7 @@ namespace PhPopovich.Controllers.cms
             var existsProperties = properties.Where(w =>
             {
                 var propertyName = w.Name.ToLower();
-                return keys.Contains(propertyName);
+                return propertyName != "id" && keys.Contains(propertyName);
             });
 
             foreach (var key in existsProperties)
@@ -299,8 +299,17 @@ namespace PhPopovich.Controllers.cms
                     {
                         typeConvert = Nullable.GetUnderlyingType(typeConvert);
 
-                        var changedType = Convert.ChangeType(strValue, typeConvert);
+                        object changedType = null;
 
+                        if (typeConvert == typeof(Guid))
+                        {
+                            changedType = Guid.Parse(strValue);
+                        }
+                        else
+                        {
+                            changedType = Convert.ChangeType(strValue, typeConvert);
+                        }
+                            
                         key.SetValue(editObject, changedType);
                     }
                 }
@@ -482,26 +491,24 @@ namespace PhPopovich.Controllers.cms
         }
 
         [HttpGet]
-        public IActionResult AddImage(Guid id, Guid idImageProperty)
+        public IActionResult AddImage(Guid id, string idImageProperty)
         {
             var image = Context.Images.FirstOrDefault(w => w.Id == id);
 
             var imageViewModel = new ImageViewModel()
             {
-                Id = idImageProperty,
                 ImageId = id,
+                PropertyName = idImageProperty,
                 Url = image?.Url,
             };
 
             return View("Image", imageViewModel);
         }
 
-        public IActionResult RemoveImage(Guid id, Guid idImageProperty)
+        [HttpPost]
+        public IActionResult RemoveImage(Guid id)
         {
-            var imageViewModel = new ImageViewModel()
-            {
-                Id = idImageProperty
-            };
+            var imageViewModel = new ImageViewModel();
 
             var image = Context.Images.FirstOrDefault(w => w.Id == id);
             if (image != null)

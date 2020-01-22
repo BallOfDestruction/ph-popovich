@@ -5,18 +5,18 @@
 }
 
 
-@if (Model?.ImageId == null)
+@if (Model?.ImageId == null || Model?.ImageId == Guid.Empty)
 {
-    <input type="file" title="Выберите изображение" class="btn btn-primary" id="@(Model?.Id)image" accept="image/*" />
+    <input type="file" title="Выберите изображение" class="btn btn-primary" id="@(Model?.PropertyName)image" accept="image/*" />
     <input type="submit" value="Загрузить" class="btn btn-primary" onclick="uploadImage()" />
     <script>
         uploadImage = function() {
-            var file = $("#@(Model?.Id)image")[0].files[0];
+            var file = $("#@(Model?.PropertyName)image")[0].files[0];
             var formData = new FormData();
-            formData.append("uploadedImageModel", file);
+            formData.append("uploadedImage", file);
 
             $.ajax({
-                url: "/HomeCms/AddImageModel",
+                url: "/HomeCms/AddImage",
                 type: "POST",
                 contentType: false,
                 data: formData,
@@ -25,21 +25,21 @@
                 async: true,
                 success: function (id) {
                     $.ajax({
-                        url: "/HomeCms/AddImageModel?id=" + id + "&idImageModelProperty=" + "@(Model?.Id)",
+                        url: "/HomeCms/AddImage?id=" + id + "&idImageProperty=" + "@(Model?.PropertyName)",
                         type: "GET",
                         contentType: false,
                         cache: false,
                         processData: false,
                         async: true,
                         success: function (data) {
-                            var input = $("#@(Model?.Id)Id");
+                            var input = $("#@(Model?.PropertyName)Id");
                             if (input.length === 0) {
                                 var filesDiv = $("#imagesHiddenInputs");
-                                filesDiv.html(filesDiv.html() + '<input type="hidden" id="@(Model?.Id)Id" name="@(Model?.Id)Id" value="' + id + '"/>');
+                                filesDiv.html(filesDiv.html() + '<input type="hidden" id="@(Model?.PropertyName)Id" name="@(Model?.PropertyName)Id" value="' + id + '"/>');
                             } else {
                                 input.val(id);
                             }
-                            $("#@(Model?.Id)").html(data);
+                            $("#@(Model?.PropertyName)").html(data);
                         }
                     });
                 }
@@ -50,19 +50,19 @@
 else
 {
     <img src="@(Model.Url)" style="max-height: 400px; max-width: 900px" alt="Изображение"/>
-    <form asp-controller="HomeCms" asp-action="RemoveImage" method="post" data-ajax="true" data-ajax-update="#@(Model?.Id)" data-ajax-success="onDelete()">
+    <form asp-controller="HomeCms" asp-action="RemoveImage" method="post" data-ajax="true" data-ajax-update="#@(Model?.PropertyName)" data-ajax-success="onDelete()">
         <input type="hidden" value="@(Model.ImageId)" name="id" />
-        <input type="hidden" value="@(Model.Id)" name="idImageModelProperty" />
+        <input type="hidden" value="@(Model.PropertyName)" name="idImageProperty" />
 
         <input type="submit" value="Удалить файл" class="btn btn-primary" style="margin-bottom: 20px; margin-top: 20px" />
     </form>
 
     <script>
         onDelete = function() {
-            var input = $("#@(Model?.Id)Id");
+            var input = $("#@(Model?.PropertyName)Id");
             if (input.length === 0) {
                 var filesDiv = $("#imagesHiddenInputs");
-                filesDiv.html(filesDiv.html() + '<input type="hidden" id="@(Model?.Id)Id" name="@(Model?.Id)Id" value=""/>');
+                filesDiv.html(filesDiv.html() + '<input type="hidden" id="@(Model?.PropertyName)Id" name="@(Model?.PropertyName)Id" value=""/>');
             } else {
                 input.val("");
             }

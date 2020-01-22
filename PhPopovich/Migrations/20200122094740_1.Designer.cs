@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PhPopovich.Models;
 
 namespace PhPopovich.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20200122094740_1")]
+    partial class _1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -112,9 +114,6 @@ namespace PhPopovich.Migrations
                     b.Property<string>("ImageType")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid?>("MainPageModelId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
 
@@ -135,9 +134,6 @@ namespace PhPopovich.Migrations
                     b.Property<DateTime>("DateCreated")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid?>("ImageModelId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<string>("MainTitle")
                         .HasColumnType("nvarchar(max)");
 
@@ -148,10 +144,6 @@ namespace PhPopovich.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("ImageModelId")
-                        .IsUnique()
-                        .HasFilter("[ImageModelId] IS NOT NULL");
 
                     b.ToTable("MainPageModels");
                 });
@@ -206,14 +198,6 @@ namespace PhPopovich.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Words");
-                });
-
-            modelBuilder.Entity("PhPopovich.Models.Pages.MainPageModel", b =>
-                {
-                    b.HasOne("PhPopovich.Models.ImageModel", "ImageModel")
-                        .WithOne("MainPageModel")
-                        .HasForeignKey("PhPopovich.Models.Pages.MainPageModel", "ImageModelId")
-                        .OnDelete(DeleteBehavior.SetNull);
                 });
 #pragma warning restore 612, 618
         }
