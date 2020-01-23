@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PhPopovich.Models;
 
 namespace PhPopovich.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20200123100140_10")]
+    partial class _10
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -131,10 +133,6 @@ namespace PhPopovich.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("MainPageModelId")
-                        .IsUnique()
-                        .HasFilter("[MainPageModelId] IS NOT NULL");
 
                     b.ToTable("Images");
                 });
@@ -263,6 +261,10 @@ namespace PhPopovich.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("ImageModelId")
+                        .IsUnique()
+                        .HasFilter("[ImageModelId] IS NOT NULL");
+
                     b.ToTable("MainPageModels");
                 });
 
@@ -361,12 +363,13 @@ namespace PhPopovich.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("PhPopovich.Models.ImageModel", b =>
+            modelBuilder.Entity("PhPopovich.Models.Pages.MainPageModel", b =>
                 {
-                    b.HasOne("PhPopovich.Models.Pages.MainPageModel", "MainPageModel")
-                        .WithOne("ImageModel")
-                        .HasForeignKey("PhPopovich.Models.ImageModel", "MainPageModelId")
-                        .OnDelete(DeleteBehavior.SetNull);
+                    b.HasOne("PhPopovich.Models.ImageModel", "ImageModel")
+                        .WithOne("MainPageModel")
+                        .HasForeignKey("PhPopovich.Models.Pages.MainPageModel", "ImageModelId")
+                        .OnDelete(DeleteBehavior.SetNull)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }
