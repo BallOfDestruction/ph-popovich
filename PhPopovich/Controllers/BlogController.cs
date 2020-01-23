@@ -17,9 +17,9 @@ namespace PhPopovich.Controllers
             var home = new BlogPageViewModel()
             {
                 HeaderViewModel = GetHeader(),
+                FooterViewModel = GetFooterViewModel(),
                 Page = Context.BlogPageModels.FirstOrDefault(),
             };
-            home.HeaderViewModel.Title = home.HeaderViewModel.CompanyName;
             home.HeaderViewModel.CurrentPage = Menu.Blog;
 
             return View(home);

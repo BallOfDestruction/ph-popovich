@@ -17,9 +17,9 @@ namespace PhPopovich.Controllers
             var home = new ProjectsPageViewModel()
             {
                 HeaderViewModel = GetHeader(),
+                FooterViewModel = GetFooterViewModel(),
                 Page = Context.ProjectsPageModels.FirstOrDefault(),
             };
-            home.HeaderViewModel.Title = home.HeaderViewModel.CompanyName;
             home.HeaderViewModel.CurrentPage = Menu.Projects;
 
             return View(home);

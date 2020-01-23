@@ -17,9 +17,9 @@ namespace PhPopovich.Controllers
             var home = new OrderPageViewModel()
             {
                 HeaderViewModel = GetHeader(),
+                FooterViewModel = GetFooterViewModel(),
                 Page = Context.OrderPageModels.FirstOrDefault(),
             };
-            home.HeaderViewModel.Title = home.HeaderViewModel.CompanyName;
             home.HeaderViewModel.CurrentPage = Menu.Order;
 
             return View(home);

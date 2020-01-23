@@ -18,10 +18,10 @@ namespace PhPopovich.Controllers
             var home = new HomePageViewModel()
             {
                 HeaderViewModel = GetHeader(),
+                FooterViewModel = GetFooterViewModel(),
                 Page = Context.MainPageModels.Include(w => w.ImageModel).FirstOrDefault(),
             };
 
-            home.HeaderViewModel.Title = home.HeaderViewModel.CompanyName;
             home.HeaderViewModel.CurrentPage = Menu.Main;
 
             return View(home);

@@ -31,7 +31,7 @@ namespace PhPopovich.Controllers.cms
         [Authorize]
         public async Task<IActionResult> GetList(string type, int page = 0, string sorted = null, string filter = null)
         {
-            var t = Type.GetType(App.Name + ".Models." + type);
+            var t = GetTypeByName(type);
             if (CheckIsSingle(t))
                 return RedirectToAction("EditFirst", new { type });
 
@@ -141,7 +141,7 @@ namespace PhPopovich.Controllers.cms
         [Authorize]
         public IActionResult Delete(string type, Guid id)
         {
-            var t = Type.GetType(App.Name + ".Models." + type);
+            var t = GetTypeByName(type);
 
             if (CheckIsSingle(t))
                 return RedirectToAction("EditFirst", new { type });
@@ -168,7 +168,7 @@ namespace PhPopovich.Controllers.cms
         [Authorize]
         public IActionResult Details(string type, Guid id)
         {
-            var t = Type.GetType(App.Name + ".Models." + type);
+            var t = GetTypeByName(type);
             dynamic dynamicObject = Activator.CreateInstance(t);
 
             ViewBag.Type = t;
@@ -217,7 +217,7 @@ namespace PhPopovich.Controllers.cms
         [Authorize]
         public IActionResult Create(string type)
         {
-            var t = Type.GetType(App.Name + "Models." + type);
+            var t = GetTypeByName(type);
 
             if (CheckIsSingle(t))
                 return RedirectToAction("EditFirst", new { type });
@@ -232,7 +232,7 @@ namespace PhPopovich.Controllers.cms
         [Authorize]
         public IActionResult EditFirst(string type)
         {
-            var t = Type.GetType(App.Name + ".Models." + type);
+            var t = GetTypeByName(type);
             dynamic dynamicObject = Activator.CreateInstance(t);
             var first = GetObjectToFirstEdit(dynamicObject);
 
@@ -252,7 +252,7 @@ namespace PhPopovich.Controllers.cms
         [Authorize]
         public IActionResult Edit(string type, Guid id)
         {
-            var t = Type.GetType(App.Name + ".Models." + type);
+            var t = GetTypeByName(type);
             dynamic dynamicObject = Activator.CreateInstance(t);
             ViewBag.NameType = type;
             ViewBag.Type = t;
@@ -270,7 +270,7 @@ namespace PhPopovich.Controllers.cms
 
             var typeName = Request.Form["type"];
             var id = Request.Form["id"];
-            var type = Type.GetType(App.Name + ".Models." + typeName);
+            var type = GetTypeByName(typeName);
             var properties = type.GetProperties();
             dynamic newObject = Activator.CreateInstance(type);
             var editObject = GetObject(newObject, Guid.Parse(id));
@@ -338,7 +338,7 @@ namespace PhPopovich.Controllers.cms
             if (!keys.Contains("type")) RedirectToAction("GetList", new { type = "Order" });
 
             var typeName = Request.Form["type"];
-            var type = Type.GetType(App.Name + ".Models." + typeName);
+            var type = GetTypeByName(typeName);
 
             if (CheckIsSingle(type))
                 return RedirectToAction("EditFirst", new { type });
@@ -591,5 +591,10 @@ namespace PhPopovich.Controllers.cms
         }
 
         #endregion
+
+        private Type GetTypeByName(string name)
+        {
+            return Type.GetType(App.Name + ".Models." + name);
+        }
     }
 }

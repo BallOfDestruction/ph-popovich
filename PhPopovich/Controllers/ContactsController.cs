@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using PhPopovich.Models;
 using PhPopovich.ViewModels.Contacts;
 
@@ -17,9 +18,12 @@ namespace PhPopovich.Controllers
             var home = new ContactsPageViewModel()
             {
                 HeaderViewModel = GetHeader(),
-                Page = Context.ContactsPageModels.FirstOrDefault(),
+                FooterViewModel = GetFooterViewModel(),
+                Page = Context.ContactsPageModels
+                    .Include(w => w.EmailModels)
+                    .Include(w => w.PhoneModels)
+                    .FirstOrDefault(),
             };
-            home.HeaderViewModel.Title = home.HeaderViewModel.CompanyName;
             home.HeaderViewModel.CurrentPage = Menu.Contacts;
 
             return View(home);

@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PhPopovich.Models;
 
 namespace PhPopovich.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20200123124900_12")]
+    partial class _12
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -80,7 +82,7 @@ namespace PhPopovich.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid?>("ContactsPageModelId")
+                    b.Property<Guid?>("AboutPageModelId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("DateCreated")
@@ -97,7 +99,7 @@ namespace PhPopovich.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ContactsPageModelId");
+                    b.HasIndex("AboutPageModelId");
 
                     b.ToTable("EmailModels");
                 });
@@ -244,14 +246,8 @@ namespace PhPopovich.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("Address")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<DateTime>("DateCreated")
                         .HasColumnType("datetime2");
-
-                    b.Property<string>("InstaLink")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PageTitle")
                         .HasColumnType("nvarchar(max)");
@@ -260,9 +256,6 @@ namespace PhPopovich.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Title")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("VkLink")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -378,7 +371,7 @@ namespace PhPopovich.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid?>("ContactsPageModelId")
+                    b.Property<Guid?>("AboutPageModelId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("DateCreated")
@@ -395,16 +388,16 @@ namespace PhPopovich.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ContactsPageModelId");
+                    b.HasIndex("AboutPageModelId");
 
                     b.ToTable("PhoneModels");
                 });
 
             modelBuilder.Entity("PhPopovich.Models.EmailModel", b =>
                 {
-                    b.HasOne("PhPopovich.Models.Pages.ContactsPageModel", "ContactsPageModel")
+                    b.HasOne("PhPopovich.Models.Pages.AboutPageModel", "AboutPageModel")
                         .WithMany("EmailModels")
-                        .HasForeignKey("ContactsPageModelId")
+                        .HasForeignKey("AboutPageModelId")
                         .OnDelete(DeleteBehavior.SetNull);
                 });
 
@@ -418,9 +411,9 @@ namespace PhPopovich.Migrations
 
             modelBuilder.Entity("PhPopovich.Models.PhoneModel", b =>
                 {
-                    b.HasOne("PhPopovich.Models.Pages.ContactsPageModel", "ContactsPageModel")
+                    b.HasOne("PhPopovich.Models.Pages.AboutPageModel", "AboutPageModel")
                         .WithMany("PhoneModels")
-                        .HasForeignKey("ContactsPageModelId")
+                        .HasForeignKey("AboutPageModelId")
                         .OnDelete(DeleteBehavior.SetNull);
                 });
 #pragma warning restore 612, 618

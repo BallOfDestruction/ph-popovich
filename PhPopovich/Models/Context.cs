@@ -21,8 +21,6 @@ namespace PhPopovich.Models
 
         public DbSet<MainPageModel> MainPageModels { get; set; }
       
-        public DbSet<UserModel> Users { get; set; }
-
         public DbSet<MenuModel> Menus { get; set; }
 
         public DbSet<AboutPageModel> AboutPageModels { get; set; }
@@ -37,6 +35,10 @@ namespace PhPopovich.Models
 
         public DbSet<BlogPageModel> BlogPageModels { get; set; }
 
+        public DbSet<PhoneModel> PhoneModels { get; set; }
+
+        public DbSet<EmailModel> EmailModels { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -46,6 +48,20 @@ namespace PhPopovich.Models
                 .WithOne(w => w.ImageModel)
                 .IsRequired(false)
                 .HasForeignKey<MainPageModel>(w => w.ImageModelId)
+                .OnDelete(DeleteBehavior.SetNull);
+
+            modelBuilder.Entity<PhoneModel>()
+                .HasOne(w => w.ContactsPageModel)
+                .WithMany(w => w.PhoneModels)
+                .IsRequired(false)
+                .HasForeignKey(w => w.ContactsPageModelId)
+                .OnDelete(DeleteBehavior.SetNull);
+
+            modelBuilder.Entity<EmailModel>()
+                .HasOne(w => w.ContactsPageModel)
+                .WithMany(w => w.EmailModels)
+                .IsRequired(false)
+                .HasForeignKey(w => w.ContactsPageModelId)
                 .OnDelete(DeleteBehavior.SetNull);
         }
 
