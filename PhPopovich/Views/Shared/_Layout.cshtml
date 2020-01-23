@@ -5,10 +5,12 @@
 @inject Context Database
 @{
     HeaderViewModel headerViewModel = null;
+    FooterViewModel footerViewModel = null;
 
     if (Model is CommonPageViewModel commonPageViewModel)
     {
         headerViewModel = commonPageViewModel.HeaderViewModel;
+        footerViewModel = commonPageViewModel.FooterViewModel;
     }
 }
 
@@ -101,12 +103,18 @@
 
 <body class="base">
 
-    @await Html.PartialAsync("Header", headerViewModel)
+    <div class="cont-wrap">
 
-    @RenderBody()
+        @await Html.PartialAsync("Header", headerViewModel)
 
-<script src="/js/main.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+        @RenderBody()
+
+        @await Html.PartialAsync("Footer", footerViewModel)
+
+        <script src="/js/main.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+
+    </div>
 
 </body>
 </html>

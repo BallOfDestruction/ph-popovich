@@ -6,126 +6,74 @@
     Layout = "_Layout";
 }
 
-<div class="cont-wrap">
-        
-    <div class="promo">
-        <div class="photo">
-            <img src="@Model.Page.ImageModel?.Url" alt="photo">
-        </div>
-        <div class="info-block">
-            <div class="container">
-                <div class="text-block">
-                    @Html.Raw(Model.Page.MainTitle)
-                </div>
-            </div>
-        </div>
-        <a href="#about-us" class="container-arr">
-            <div class="chevron"></div>
-            <div class="chevron"></div>
-            <div class="chevron"></div>
-        </a>
+<div class="promo">
+    <div class="photo">
+        <img src="@Model.Page.ImageModel?.Url" alt="photo">
     </div>
-
-    <div class="about-us" id="about-us">
+    <div class="info-block">
         <div class="container">
-            <h3 class="title">About us</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mattis vel sem posuere imperdiet. Fusce varius nunc lectus, eget auctor metus maximus ac. Nullam lobortis enim eget quam iaculis, in malesuada diam convallis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam nulla sem, scelerisque in bibendum ac, sollicitudin ac diam. Maecenas in pharetra lectus, ut ultrices lacus. Pellentesque in sem nunc. Vestibulum gravida nunc bibendum leo aliquam, ac dignissim orci vehicula. Aenean posuere euismod tellus, ut tempus orci cursus at. Nullam magna neque, feugiat ut ipsum eget, convallis posuere quam.</p>
-        </div>
-    </div>
-
-    <div class="gallery-wrap">
-        <div class="container">
-            <div class="img-wrap">
-                <figure>
-                    <img src="/img/1.jpg" alt="img">
-                    <figcaption><a href="#"><span>Lorem ipsum</span></a></figcaption>
-                </figure>
-                <figure>
-                    <img src="/img/2.jpg" alt="img">
-                    <figcaption><a href="#"><span>Lorem ipsum</span></a></figcaption>
-                </figure>
-            </div>
-            <div class="img-wrap">
-                <figure>
-                    <img src="/img/3.jpg" alt="img">
-                    <figcaption><a href="#"><span>Lorem ipsum</span></a></figcaption>
-                </figure>
-            </div>
-            <div class="img-wrap">
-                <figure>
-                    <img src="/img/4.jpg" alt="img">
-                    <figcaption><a href="#"><span>Lorem ipsum</span></a></figcaption>
-                </figure>
-                <figure>
-                    <img src="/img/5.jpg" alt="img">
-                    <figcaption><a href="#"><span>Lorem ipsum</span></a></figcaption>
-                </figure>
-            </div>
-            <div class="img-wrap">
-                <figure>
-                    <img src="/img/6.jpg" alt="img">
-                    <figcaption><a href="#"><span>Lorem ipsum</span></a></figcaption>
-                </figure>
-                <figure>
-                    <img src="/img/7.jpg" alt="img">
-                    <figcaption><a href="#"><span>Lorem ipsum</span></a></figcaption>
-                </figure>
-            </div>
-            <div class="img-wrap">
-                <figure>
-                    <img src="/img/8.jpg" alt="img">
-                    <figcaption><a href="#"><span>Lorem ipsum</span></a></figcaption>
-                </figure>
+            <div class="text-block">
+                @Html.Raw(Model.Page.MainTitle)
             </div>
         </div>
     </div>
+    <a href="#about-us" class="container-arr">
+        <div class="chevron"></div>
+        <div class="chevron"></div>
+        <div class="chevron"></div>
+    </a>
+</div>
 
-    <footer>
-        <div class="container clr">
-            <div class="foot-l">
-                <div class="about-wrap">
-                    <h6>About</h6>
-                    <p>
-                        Integer euismod lobortis lectus sed suscipit. Donec commodo et velit at tristique. Cras vitae
-                        nunc porttitor nibh varius pellentesque nec in urna. Proin a neque non purus tincidunt
-                        hendrerit. Sed magna mi, dapibus ultrices ultricies ut, accumsan in ante. Suspendisse a dui vel
-                        felis fringilla porta. Mauris vulputate auctor enim vitae accumsan.
-                    </p>
-                </div>
-                <div class="links-wrap">
-                    <h6>Quick links</h6>
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
-                    <a href="#">Link 4</a>
-                    <a href="#">Link 5</a>
-                </div>
-                <p>Copyright Catsoft &copy; 2020</p>
-            </div>
-            <div class="foot-r">
-                <div class="address-wrap">
-                    <h6>Adress</h6>
-                    <p>Donec imperdiet urna sem, ac interdum lorem tristique convallis.</p>
-                </div>
-                <div class="phones-wrap">
-                    <h6>Phones</h6>
-                    <a href="#">+1 (234) 567-8901</a>
-                    <a href="#">+1 (234) 567-8901</a>
-                </div>
-                <div class="soc-wrap">
-                    <h6>Follow us</h6>
-                    <div class="soc-block">
-                        <span><a href="https://vk.com" target="_blank" class="fa fa-vk"></a></span>
-                        <span><a href="https://twitter.com" target="_blank" class="fa fa-twitter"></a></span>
-                        <span><a href="https://facebook.com" target="_blank" class="fa fa-facebook"></a></span>
-                        <span><a href="https://instagram.com" target="_blank" class="fa fa-instagram"></a></span>
-                        <span><a href="https://plus.google.com" target="_blank" class="fa fa-google-plus"></a></span>
-                        <span><a href="https://ok.ru/" target="_blank" class="fa fa-odnoklassniki"></a></span>
-                    </div>
-                </div>
-                <div class="scrollup-block-right"><button id="scrollup" class="material-icons goOnTop">arrow_upward</button></div>
-            </div>
+<div class="about-us" id="about-us">
+    <div class="container">
+        <h3 class="title">About us</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mattis vel sem posuere imperdiet. Fusce varius nunc lectus, eget auctor metus maximus ac. Nullam lobortis enim eget quam iaculis, in malesuada diam convallis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nam nulla sem, scelerisque in bibendum ac, sollicitudin ac diam. Maecenas in pharetra lectus, ut ultrices lacus. Pellentesque in sem nunc. Vestibulum gravida nunc bibendum leo aliquam, ac dignissim orci vehicula. Aenean posuere euismod tellus, ut tempus orci cursus at. Nullam magna neque, feugiat ut ipsum eget, convallis posuere quam.</p>
+    </div>
+</div>
+
+<div class="gallery-wrap">
+    <div class="container">
+        <div class="img-wrap">
+            <figure>
+                <img src="/img/1.jpg" alt="img">
+                <figcaption><a href="#"><span>Lorem ipsum</span></a></figcaption>
+            </figure>
+            <figure>
+                <img src="/img/2.jpg" alt="img">
+                <figcaption><a href="#"><span>Lorem ipsum</span></a></figcaption>
+            </figure>
         </div>
-    </footer>
-
+        <div class="img-wrap">
+            <figure>
+                <img src="/img/3.jpg" alt="img">
+                <figcaption><a href="#"><span>Lorem ipsum</span></a></figcaption>
+            </figure>
+        </div>
+        <div class="img-wrap">
+            <figure>
+                <img src="/img/4.jpg" alt="img">
+                <figcaption><a href="#"><span>Lorem ipsum</span></a></figcaption>
+            </figure>
+            <figure>
+                <img src="/img/5.jpg" alt="img">
+                <figcaption><a href="#"><span>Lorem ipsum</span></a></figcaption>
+            </figure>
+        </div>
+        <div class="img-wrap">
+            <figure>
+                <img src="/img/6.jpg" alt="img">
+                <figcaption><a href="#"><span>Lorem ipsum</span></a></figcaption>
+            </figure>
+            <figure>
+                <img src="/img/7.jpg" alt="img">
+                <figcaption><a href="#"><span>Lorem ipsum</span></a></figcaption>
+            </figure>
+        </div>
+        <div class="img-wrap">
+            <figure>
+                <img src="/img/8.jpg" alt="img">
+                <figcaption><a href="#"><span>Lorem ipsum</span></a></figcaption>
+            </figure>
+        </div>
+    </div>
 </div>
