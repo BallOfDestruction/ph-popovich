@@ -44,7 +44,6 @@ namespace PhPopovich.Models
             modelBuilder.Entity<ImageModel>()
                 .HasOne(w => w.MainPageModel)
                 .WithOne(w => w.ImageModel)
-                .IsRequired()
                 .HasForeignKey<MainPageModel>(w => w.ImageModelId)
                 .OnDelete(DeleteBehavior.SetNull);
         }

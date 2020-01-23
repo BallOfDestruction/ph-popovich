@@ -20,6 +20,11 @@ namespace PhPopovich.Controllers
                 HeaderViewModel = GetHeader(),
                 Page = Context.MainPageModels.Include(w => w.ImageModel).FirstOrDefault(),
             };
+
+            var c = Context.MainPageModels.ToList();
+            var b = Context.MainPageModels.Include(w => w.ImageModel).ToList();
+            var cc = Context.MainPageModels.FirstOrDefault();
+
             home.HeaderViewModel.Title = home.HeaderViewModel.CompanyName;
             home.HeaderViewModel.CurrentPage = Menu.Main;
 
