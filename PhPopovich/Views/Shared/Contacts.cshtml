@@ -1,0 +1,57 @@
+﻿@using PhPopovich.Models
+@inject Context DbContext
+@model PhPopovich.ViewModels.Contacts.ContactsPageViewModel
+
+@{
+    Layout = null;
+}
+
+<div id="contacts" class="contacts-container container clr">
+
+    <h2 class="title">Контакты</h2> <br/>
+
+    <div class="foot-l">
+
+        <div class="address-wrap">
+            <h6 class="subTitle">Местоположение</h6>
+            <p>@Model.Page.Address</p>
+        </div>
+
+
+        <div class="soc-wrap">
+            <h6 class="subTitle">Мы в социальных сетях</h6>
+            <a href="@Model.Page.InstaLink">@Model.Page.InstaLink</a>
+            <br />
+            <a href="@Model.Page.VkLink">@Model.Page.VkLink</a>
+            <br />
+        </div>
+
+    </div>
+
+    <div class="foot-r">
+
+        <div class="phones-wrap">
+            <h6 class="subTitle">Телефоны</h6>
+            @foreach (var phone in Model.Page.PhoneModels)
+            {
+                <a href="tel:@phone.Phone">@phone.Phone</a>
+                <br />
+            }
+        </div>
+
+        <div class="phones-wrap">
+            <h6 class="subTitle">Emails</h6>
+            @foreach (var email in Model.Page.EmailModels)
+            {
+                <a href="mailto:@email.Email">@email.Email</a>
+                <br />
+            }
+        </div>
+
+        <div class="scrollup-block-right">
+            <button id="scrollup" class="material-icons goOnTop">arrow_upward</button>
+        </div>
+
+    </div>
+
+</div>

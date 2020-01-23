@@ -3,7 +3,15 @@ using PhPopovich.ViewModels.Common;
 
 namespace PhPopovich.ViewModels.Contacts
 {
-    public class ContactsPageViewModel : CommonPageViewModel<ContactsPageModel>
+    public class ContactsPageViewModel : PartialPageViewModel<ContactsPageModel>
     {
+        public ContactsPageViewModel()
+        {
+            
+        }
+
+        public ContactsPageViewModel(ContactsPageModel contactsPageModel) : base(contactsPageModel)
+        {
+        }
     }
 }

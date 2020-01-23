@@ -10,57 +10,14 @@
 
         <div class="foot-l">
 
-            <div class="address-wrap">
-                <h6 style="padding-bottom: 5px">Местоположение</h6>
-                <p>@Model.ContactsPageModel.Address</p>
-            </div>
+            <div>
 
+                <p>Copyright Catsoft &copy; @DateTime.Now.Year</p>
 
-            <div class="soc-wrap">
-                <h6 style="padding-bottom: 5px">Мы в социальных сетях</h6>
-                <a href="@Model.ContactsPageModel.InstaLink">@Model.ContactsPageModel.InstaLink</a>
-                <br />
-                <a href="@Model.ContactsPageModel.VkLink">@Model.ContactsPageModel.VkLink</a>
-                <br />
-                @*<div class="soc-block">
-                 <span><a href="https://vk.com" target="_blank" class="fa fa-vk"></a></span>
-                 <span><a href="https://twitter.com" target="_blank" class="fa fa-twitter"></a></span>
-                 <span><a href="https://facebook.com" target="_blank" class="fa fa-facebook"></a></span>
-                 <span><a href="https://instagram.com" target="_blank" class="fa fa-instagram"></a></span>
-                 <span><a href="https://plus.google.com" target="_blank" class="fa fa-google-plus"></a></span>
-                 <span><a href="https://ok.ru/" target="_blank" class="fa fa-odnoklassniki"></a></span>
-            </div>*@
-            </div>
-
-            <p>Copyright Catsoft &copy; @DateTime.Now.Year</p>
-
-        </div>
-
-        <div class="foot-r">
-
-            <div class="phones-wrap">
-                <h6 style="padding-bottom: 5px">Телефоны</h6>
-                @foreach (var phone in Model.ContactsPageModel.PhoneModels)
-                {
-                    <a href="tel:@phone.Phone">@phone.Phone</a>
-                    <br/>
-                }
-            </div>
-
-            <div class="phones-wrap">
-                <h6 style="padding-bottom: 5px">Emails</h6>
-                @foreach (var email in Model.ContactsPageModel.EmailModels)
-                {
-                    <a href="mailto:@email.Email">@email.Email</a>
-                    <br />
-                }
-            </div>
-
-            <div class="scrollup-block-right">
-                <button id="scrollup" class="material-icons goOnTop">arrow_upward</button>
             </div>
 
         </div>
 
     </div>
+
 </footer>
