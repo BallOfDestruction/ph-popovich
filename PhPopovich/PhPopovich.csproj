@@ -455,6 +455,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Enums\" />
+    <Folder Include="Views\About\" />
     <Folder Include="wwwroot\fonts\" />
     <Folder Include="wwwroot\images\" />
     <Folder Include="EntityFrameworkPaginateCore\" />

@@ -4,10 +4,7 @@ using PhPopovich.ViewModels.Common;
 
 namespace PhPopovich.ViewModels.About
 {
-    public class AboutPageViewModel : CommonPageViewModel<AboutPageModel>
+    public class AboutPageViewModel : PartialPageViewModel<AboutPageModel>
     {
-        public List<string> Phones { get; set; }
-
-        public List<string> Emails { get; set; }
     }
 }
