@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PhPopovich.Models;
+using PhPopovich.ViewModels.About;
 using PhPopovich.ViewModels.Contacts;
 using PhPopovich.ViewModels.Home;
 
@@ -25,6 +26,7 @@ namespace PhPopovich.Controllers
                     .Include(w => w.PhoneModels)
                     .FirstOrDefault()),
                 Page = Context.MainPageModels.Include(w => w.ImageModel).FirstOrDefault(),
+                AboutPageViewModel = new AboutPageViewModel(Context.AboutPageModels.FirstOrDefault())
             };
 
             home.HeaderViewModel.CurrentPage = Menu.Main;

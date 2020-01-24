@@ -6,5 +6,14 @@ namespace PhPopovich.ViewModels.About
 {
     public class AboutPageViewModel : PartialPageViewModel<AboutPageModel>
     {
+        public AboutPageViewModel()
+        {
+            
+        }
+
+        public AboutPageViewModel(AboutPageModel aboutPageModel) : base(aboutPageModel)
+        {
+            
+        }
     }
 }
