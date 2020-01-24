@@ -6,6 +6,7 @@ using PhPopovich.Models.Pages;
 using PhPopovich.ViewModels.About;
 using PhPopovich.ViewModels.Contacts;
 using PhPopovich.ViewModels.Home;
+using PhPopovich.ViewModels.Projects;
 using PhPopovich.ViewModels.Services;
 
 namespace PhPopovich.Controllers
@@ -29,7 +30,8 @@ namespace PhPopovich.Controllers
                     .FirstOrDefault()),
                 Page = Context.MainPageModels.Include(w => w.ImageModel).FirstOrDefault(),
                 AboutPageViewModel = new AboutPageViewModel(Context.AboutPageModels.FirstOrDefault()),
-                ServicesPageViewModel = new ServicesPageViewModel(Context.ServicesPageModels.FirstOrDefault())
+                ServicesPageViewModel = new ServicesPageViewModel(Context.ServicesPageModels.FirstOrDefault()),
+                ProjectsPageViewModel = new ProjectsPageViewModel(Context.ProjectsPageModels.FirstOrDefault()),
             };
 
             var services = Context.ServiceModels

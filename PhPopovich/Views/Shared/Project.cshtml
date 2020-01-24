@@ -1,0 +1,15 @@
+﻿@using PhPopovich.Models
+@inject Context DbContext
+@model ProjectModel
+
+@{
+    Layout = null;
+}
+
+@if (Model != null)
+{
+    <figure>
+        <img src="@Model.ImageModel.Url" alt="img">
+        <figcaption><a href="#"><span>@Html.Raw(Model.About)</span></a></figcaption>
+    </figure>
+}

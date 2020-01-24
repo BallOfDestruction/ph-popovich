@@ -1,0 +1,14 @@
+﻿@using PhPopovich.Models
+@inject Context DbContext
+@model PhPopovich.ViewModels.Projects.ProjectsPageViewModel
+
+@{
+    Layout = null;
+}
+
+<div class="about-us" id="projects">
+    <div class="container">
+        <h3 class="title">Мои работы</h3>
+        <p>@Html.Raw(Model.Page.ServicesText)</p>
+    </div>
+</div>
