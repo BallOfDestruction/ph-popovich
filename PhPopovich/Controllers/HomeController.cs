@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PhPopovich.Models;
-using PhPopovich.Models.Pages;
 using PhPopovich.ViewModels.About;
 using PhPopovich.ViewModels.Contacts;
 using PhPopovich.ViewModels.Home;
@@ -46,8 +45,8 @@ namespace PhPopovich.Controllers
                 .Take(home.Page?.ProjectsCount ?? 0)
                 .ToList();
 
-            home.Services = services;
-            home.Projects = projects;
+            home.ServicesPageViewModel.ServiceModels = services;
+            home.ProjectsPageViewModel.ProjectModels = projects;
 
             home.HeaderViewModel.CurrentPage = Menu.Main;
 

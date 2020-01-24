@@ -1,6 +1,4 @@
-﻿using System.Runtime.InteropServices.ComTypes;
-using PhPopovich.Models.Pages;
-using PhPopovich.ViewModels.Common;
+﻿using PhPopovich.ViewModels.Common;
 
 namespace PhPopovich.ViewModels.Projects
 {

@@ -11,4 +11,9 @@
         <h3 class="title">Мои работы</h3>
         <p>@Html.Raw(Model.Page.ServicesText)</p>
     </div>
+    
+    @await Html.PartialAsync("Projects", Model.ProjectModels)
+    
+    <button><h4><strong>ВСЕ ПРОЕКТЫ</strong></h4></button>
 </div>
+

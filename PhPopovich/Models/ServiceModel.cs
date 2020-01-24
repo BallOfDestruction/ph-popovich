@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
 using PhPopovich.Controllers.cms;
 
 namespace PhPopovich.Models
@@ -27,7 +24,7 @@ namespace PhPopovich.Models
         [Show(false, false, false, false)]
         public Guid? ImageModelId { get; set; }
 
-        [Show(false, false, true, true)]
+        [Show(false, false)]
         [DisplayName("Изображение")]
         [Required]
         public ImageModel ImageModel { get; set; }

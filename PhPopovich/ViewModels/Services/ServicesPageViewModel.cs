@@ -1,4 +1,6 @@
-﻿using PhPopovich.Models.Pages;
+﻿using System.Collections.Generic;
+using PhPopovich.Models;
+using PhPopovich.Models.Pages;
 using PhPopovich.ViewModels.Common;
 
 namespace PhPopovich.ViewModels.Services
@@ -14,5 +16,7 @@ namespace PhPopovich.ViewModels.Services
         {
             
         }
+        
+        public List<ServiceModel> ServiceModels { get; set; }
     }
 }

@@ -16,7 +16,7 @@ namespace PhPopovich.Models.Pages
         [Show(false, false, false, false)]
         public Guid? ImageModelId { get; set; }
 
-        [Show(false, false, true, true)]
+        [Show(false, false)]
         [DisplayName("Изображение")]
         [Required]
         public ImageModel ImageModel { get; set; }

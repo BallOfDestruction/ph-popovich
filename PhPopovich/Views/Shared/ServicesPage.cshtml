@@ -11,4 +11,10 @@
         <h3 class="title">Услуги</h3>
         <p>@Html.Raw(Model.Page.ServicesText)</p>
     </div>
+
+    <div class="container">
+        @await Html.PartialAsync("Services", Model.ServiceModels)
+    </div>
 </div>
+
+

@@ -13,7 +13,7 @@
         foreach (var image in Model.Images)
         {
             var model = new OneToManySingleImage(image.Id, image.Url, Model.LinkPropertyName);
-            @Html.Partial("OneToManySingleImage", model)
+            @await Html.PartialAsync("OneToManySingleImage", model)
         }
     }
 </div>

@@ -12,7 +12,7 @@ namespace PhPopovich.Models
 
         [DisplayName("Позиция")]
         [Show]
-        public int Position { get; set; }
+        public override int Position { get; set; }
 
         [Show(false,false,false,false)]
         public string Class { get; set; }
