@@ -22,5 +22,17 @@ namespace PhPopovich.Models
         public Guid? MainPageModelId { get; set; }
 
         public MainPageModel MainPageModel { get; set; }
+
+
+        [Show(false, false, false, false)]
+        public Guid? ServiceModelId { get; set; }
+
+        public ServiceModel ServiceModel{ get; set; }
+
+
+        [Show(false, false, false, false)]
+        public Guid? ProjectModelId { get; set; }
+
+        public ProjectModel ProjectModel { get; set; }
     }
 }

@@ -5,21 +5,16 @@ using PhPopovich.ViewModels.Services;
 
 namespace PhPopovich.Controllers
 {
-    public class ServicesController : CommonController
+    public class AllServicesController : CommonController
     {
-        public ServicesController(Context context)
+        public AllServicesController(Context context)
         {
             Context = context;
         }
 
         public IActionResult Index()
         {
-            var home = new ServicesPageViewModel()
-            {
-                HeaderViewModel = GetHeader(),
-                FooterViewModel = GetFooterViewModel(),
-                Page = Context.ServicesPageModels.FirstOrDefault(),
-            };
+            var home = new AllServicesPageViewModel(GetHeader(), GetFooterViewModel());
             home.HeaderViewModel.CurrentPage = Menu.Services;
 
             return View(home);

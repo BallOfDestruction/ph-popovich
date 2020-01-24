@@ -371,7 +371,16 @@ namespace PhPopovich.Controllers.cms
                     {
                         typeConvert = Nullable.GetUnderlyingType(typeConvert);
 
-                        var changedType = Convert.ChangeType(strValue, typeConvert);
+                        object changedType = null;
+
+                        if (typeConvert == typeof(Guid))
+                        {
+                            changedType = Guid.Parse(strValue);
+                        }
+                        else
+                        {
+                            changedType = Convert.ChangeType(strValue, typeConvert);
+                        }
 
                         key.SetValue(newObject, changedType);
                     }

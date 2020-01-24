@@ -84,7 +84,7 @@
             @foreach (var propertyInfo in images)
             {
                 var name = ReflectionHelper.GetNameProperty(propertyInfo);
-                var image = propertyInfo.GetValue(Model) as ImageModel;
+                var image = propertyInfo.GetValue(Model) as ImageModel ?? new ImageModel();;
                 var imageViewModel = new ImageViewModel()
                 {
                     PropertyName = propertyInfo.Name,

@@ -20,5 +20,12 @@ namespace PhPopovich.Models.Pages
         [DisplayName("Изображение")]
         [Required]
         public ImageModel ImageModel { get; set; }
+
+
+        [DisplayName("Количество услуг")]
+        public int ServicesCount { get; set; }
+
+        [DisplayName("Количество работ")]
+        public int ProjectsCount { get; set; }
     }
 }

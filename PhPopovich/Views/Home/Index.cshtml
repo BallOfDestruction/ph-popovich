@@ -26,52 +26,8 @@
 
 @await Html.PartialAsync("About", Model.AboutPageViewModel)
 
-<div class="gallery-wrap">
-    <div class="container">
-        <div class="img-wrap">
-            <figure>
-                <img src="/img/1.jpg" alt="img">
-                <figcaption><a href="#"><span>Lorem ipsum</span></a></figcaption>
-            </figure>
-            <figure>
-                <img src="/img/2.jpg" alt="img">
-                <figcaption><a href="#"><span>Lorem ipsum</span></a></figcaption>
-            </figure>
-        </div>
-        <div class="img-wrap">
-            <figure>
-                <img src="/img/3.jpg" alt="img">
-                <figcaption><a href="#"><span>Lorem ipsum</span></a></figcaption>
-            </figure>
-        </div>
-        <div class="img-wrap">
-            <figure>
-                <img src="/img/4.jpg" alt="img">
-                <figcaption><a href="#"><span>Lorem ipsum</span></a></figcaption>
-            </figure>
-            <figure>
-                <img src="/img/5.jpg" alt="img">
-                <figcaption><a href="#"><span>Lorem ipsum</span></a></figcaption>
-            </figure>
-        </div>
-        <div class="img-wrap">
-            <figure>
-                <img src="/img/6.jpg" alt="img">
-                <figcaption><a href="#"><span>Lorem ipsum</span></a></figcaption>
-            </figure>
-            <figure>
-                <img src="/img/7.jpg" alt="img">
-                <figcaption><a href="#"><span>Lorem ipsum</span></a></figcaption>
-            </figure>
-        </div>
-        <div class="img-wrap">
-            <figure>
-                <img src="/img/8.jpg" alt="img">
-                <figcaption><a href="#"><span>Lorem ipsum</span></a></figcaption>
-            </figure>
-        </div>
-    </div>
-</div>
+@await Html.PartialAsync("ServicesPage", Model.ServicesPageViewModel)
 
+@await Html.PartialAsync("Services", Model.Services)
 
 @await Html.PartialAsync("Contacts", Model.ContactsPageViewModel)

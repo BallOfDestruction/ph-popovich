@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PhPopovich.Models;
 
 namespace PhPopovich.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20200124102134_20")]
+    partial class _20
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -300,12 +302,6 @@ namespace PhPopovich.Migrations
                     b.Property<int>("Position")
                         .HasColumnType("int");
 
-                    b.Property<int>("ProjectsCount")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ServicesCount")
-                        .HasColumnType("int");
-
                     b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
 
@@ -448,7 +444,7 @@ namespace PhPopovich.Migrations
                         .IsUnique()
                         .HasFilter("[ImageModelId] IS NOT NULL");
 
-                    b.ToTable("ProjectModels");
+                    b.ToTable("ProjectModel");
                 });
 
             modelBuilder.Entity("PhPopovich.Models.ServiceModel", b =>

@@ -39,6 +39,10 @@ namespace PhPopovich.Models
 
         public DbSet<EmailModel> EmailModels { get; set; }
 
+        public DbSet<ServiceModel> ServiceModels { get; set; }
+
+        public DbSet<ProjectModel> ProjectModels { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -62,6 +66,20 @@ namespace PhPopovich.Models
                 .WithMany(w => w.EmailModels)
                 .IsRequired(false)
                 .HasForeignKey(w => w.ContactsPageModelId)
+                .OnDelete(DeleteBehavior.SetNull);
+
+            modelBuilder.Entity<ImageModel>()
+                .HasOne(w => w.ServiceModel)
+                .WithOne(w => w.ImageModel)
+                .IsRequired(false)
+                .HasForeignKey<ServiceModel>(w => w.ImageModelId)
+                .OnDelete(DeleteBehavior.SetNull);
+
+            modelBuilder.Entity<ImageModel>()
+                .HasOne(w => w.ProjectModel)
+                .WithOne(w => w.ImageModel)
+                .IsRequired(false)
+                .HasForeignKey<ProjectModel>(w => w.ImageModelId)
                 .OnDelete(DeleteBehavior.SetNull);
         }
 

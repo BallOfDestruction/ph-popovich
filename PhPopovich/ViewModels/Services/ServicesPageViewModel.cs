@@ -3,7 +3,16 @@ using PhPopovich.ViewModels.Common;
 
 namespace PhPopovich.ViewModels.Services
 {
-    public class ServicesPageViewModel : CommonPageViewModel<ServicesPageModel>
+    public class ServicesPageViewModel : PartialPageViewModel<ServicesPageModel>
     {
+        public ServicesPageViewModel()
+        {
+            
+        }
+
+        public ServicesPageViewModel(ServicesPageModel servicesPageModel) : base(servicesPageModel)
+        {
+            
+        }
     }
 }

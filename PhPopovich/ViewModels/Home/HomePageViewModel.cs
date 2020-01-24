@@ -1,7 +1,10 @@
-﻿using PhPopovich.Models.Pages;
+﻿using System.Collections.Generic;
+using PhPopovich.Models;
+using PhPopovich.Models.Pages;
 using PhPopovich.ViewModels.About;
 using PhPopovich.ViewModels.Common;
 using PhPopovich.ViewModels.Contacts;
+using PhPopovich.ViewModels.Services;
 
 namespace PhPopovich.ViewModels.Home
 {
@@ -10,5 +13,11 @@ namespace PhPopovich.ViewModels.Home
         public ContactsPageViewModel ContactsPageViewModel { get; set; }
 
         public AboutPageViewModel AboutPageViewModel { get; set; }
+
+        public ServicesPageViewModel ServicesPageViewModel { get; set; }
+
+        public List<ServiceModel> Services { get; set; }
+
+        public List<ProjectModel> Projects { get; set; }
     }
 }

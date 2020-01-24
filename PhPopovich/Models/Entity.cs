@@ -21,7 +21,7 @@ namespace PhPopovich.Models
         public virtual string Title { get; set; }
 
         [Show(false, false, false, false)]
-        public string Position { get; set; }
+        public virtual int Position { get; set; }
 
         public virtual string GetValueFromNameProperty(string nameProperty)
         {
