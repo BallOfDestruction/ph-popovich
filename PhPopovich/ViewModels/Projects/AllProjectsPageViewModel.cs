@@ -1,4 +1,7 @@
-﻿using PhPopovich.ViewModels.Common;
+﻿using System.Collections.Generic;
+using PhPopovich.Models;
+using PhPopovich.Models.Pages;
+using PhPopovich.ViewModels.Common;
 
 namespace PhPopovich.ViewModels.Projects
 {
@@ -13,5 +16,9 @@ namespace PhPopovich.ViewModels.Projects
         {
             
         }
+        
+        public List<ProjectModel> ProjectModels { get; set; }
+        
+        public ProjectsPageModel ProjectsPageModel { get; set; }
     }
 }

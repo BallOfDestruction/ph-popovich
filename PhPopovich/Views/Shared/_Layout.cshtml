@@ -16,88 +16,53 @@
 <!doctype html>
 <html lang="ru">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <title>@headerViewModel?.Title</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link href='https://fonts.googleapis.com/css?family=Material+Icons|Cousine:400,700&amp;subset=cyrillic' rel='stylesheet' type='text/css'>
-    <link type="text/css" rel="StyleSheet" href="/src/shop.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 
+    <link href='https://fonts.googleapis.com/css?family=Material+Icons|Cousine:400,700&amp;subset=cyrillic' rel='stylesheet' type='text/css'/>
     <style>
         font-face {
             font-family: "FontAwesome";
             font-style: normal;
             font-weight: normal;
-            src: url("/.s/src/font/fontawesome-webfont.eot?#iefix&v=4.3.0") format("embedded-opentype"), url("/.s/src/font/fontawesome-webfont.woff2?v=4.3.0") format("woff2"), url("/.s/src/font/fontawesome-webfont.woff?v=4.3.0") format("woff"), url("/.s/src/font/fontawesome-webfont.ttf?v=4.3.0") format("truetype"), url("/.s/src/font/fontawesome-webfont.svg?v=4.3.0#fontawesomeregular") format("svg");
+            src: url("/font/fontawesome-webfont.eot?#iefix&v=4.3.0") 
+                 format("embedded-opentype"), 
+                 url("/font/fontawesome-webfont.woff2?v=4.3.0") 
+                 format("woff2"), 
+                 url("/font/fontawesome-webfont.woff?v=4.3.0") 
+                 format("woff"), 
+                 url("/font/fontawesome-webfont.ttf?v=4.3.0") 
+                 format("truetype"), 
+                 url("/font/fontawesome-webfont.svg?v=4.3.0#fontawesomeregular") 
+                 format("svg");
         }
     </style>
 
     <link type="text/css" rel="StyleSheet" href="/css/1806.css" />
-    <script type="text/javascript">
-        var currentPageIdTemplate = 'sitePage1';
-        var currentModuleTemplate = 'index';</script>
 
-    <link rel="stylesheet" href="/src/base.min.css" />
-    <link rel="stylesheet" href="/src/layer7.min.css" />
+    <link rel="stylesheet" href="/css/base.min.css" />
+    <link rel="stylesheet" href="/css/layer7.min.css" />
 
-    <script src="/src/jquery-1.12.4.min.js" />
 
-    <script src="/src/uwnd.min.js" />
-    <script type="text/javascript" src="//s22.ucoz.net/cgi/uutils.fcg?a=uSD&ca=2&ug=999&isp=0&r=0.245478800805277" />
-
-    <script type="text/javascript">
-        window.ulb = { photoPage: "Перейти на страницу с фотографией.", closeBtn: "Закрыть", error: "Запрошенный контент не может быть загружен. Пожалуйста, попробуйте позже.", next: "Следующий", prev: "Предыдущий", btnPlay: "Начать слайдшоу", btnToggle: "Изменить размер", };
-    </script>
-
-    <link rel="stylesheet" href="/src/ulightbox/ulightbox.min.css" />
-    <script src="/src/ulightbox/ulightbox.min.js"></script>
-    <script async defer src="https://www.google.com/recaptcha/api.js?onload=reCallback&render=explicit&hl=ru"></script>
-    <script type="text/javascript">
-
-        function reCallback() {
-            $('.g-recaptcha').each(function (index, element) {
-                element.setAttribute('rcid', index);
-
-                if ($(element).is(':empty') && grecaptcha.render) {
-                    grecaptcha.render(element, {
-                        sitekey: element.getAttribute('data-sitekey'),
-                        theme: element.getAttribute('data-theme'),
-                        size: element.getAttribute('data-size')
-                    });
-                }
-
-            });
-        }
-        function reReset(reset) {
-            reset && grecaptcha.reset(reset.previousElementSibling.getAttribute('rcid'));
-            if (!reset) for (rel in ___grecaptcha_cfg.clients) grecaptcha.reset(rel);
-        }
-
-    </script>
-
-    <style type="text/css">
-        .UhideBlock {
-            display: none;
-        }
-    </style>
-
-    <script type="text/javascript">
-        function uSocialLogin(t) {
-            var params = { 'vkontakte': { 'width': 790, 'height': 400 }, 'ok': { 'width': 710, 'height': 390 }, 'facebook': { 'width': 950, 'height': 520 }, 'yandex': { 'width': 870, 'height': 515 }, 'google': { 'width': 700, 'height': 600 }, 'twitter': { 'width': 800, 'height': 400 } };
-            var ref = escape(location.protocol + '//' + ('ph-popovitch.ucoz.net' || location.hostname) + location.pathname + ((location.hash ? (location.search ? location.search + '&' : '?') + 'rnd=' + Date.now() + location.hash : (location.search || ''))));
-            window.open('/' + t + '?ref=' + ref, 'conwin', 'width=' + params[t].width + ',height=' + params[t].height + ',status=1,resizable=1,left=' + parseInt((screen.availWidth / 2) - (params[t].width / 2)) + ',top=' + parseInt((screen.availHeight / 2) - (params[t].height / 2) - 20) + 'screenX=' + parseInt((screen.availWidth / 2) - (params[t].width / 2)) + ',screenY=' + parseInt((screen.availHeight / 2) - (params[t].height / 2) - 20));
-            return false;
-        }
-    </script>
-
-    <link type="text/css" rel="stylesheet" href="/src/social.css" />
+    <link rel="stylesheet" href="/css/ulightbox.min.css" />
+    <script src="/js/ulightbox.min.js"></script>
 
     <link href="/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" type="text/css" />
     <link href="/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 
-    <script src="/lib/jQuery/dist/jquery.js"></script>
-    <script src="/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script type="text/javascript" src="/lib/jQuery/dist/jquery.js"></script>
+    <script type="text/javascript" src="/lib/moment/min/moment.min.js"></script>
+    <script type="text/javascript" src="/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    
+    <script type="text/javascript" src="/lib/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
 
+    <script src="/js/uwnd.min.js" ></script>
+    
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/lib/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
+    
 </head>
 
 <body class="base">

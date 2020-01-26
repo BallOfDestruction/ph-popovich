@@ -9,11 +9,13 @@
 <div class="about-us" id="projects">
     <div class="container">
         <h3 class="title">Мои работы</h3>
-        <p>@Html.Raw(Model.Page.ServicesText)</p>
+        <p>@Html.Raw(Model.Page.ServicesText)</p><br/>
     </div>
     
     @await Html.PartialAsync("Projects", Model.ProjectModels)
-    
-    <button><h4><strong>ВСЕ ПРОЕКТЫ</strong></h4></button>
+
+    <h4><strong>
+        @Html.ActionLink("ВСЕ ПРОЕКТЫ", "Index", "AllProjects")
+    </strong></h4>
 </div>
 

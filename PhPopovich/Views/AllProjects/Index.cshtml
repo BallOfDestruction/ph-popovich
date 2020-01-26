@@ -1,0 +1,16 @@
+﻿@using PhPopovich.Models
+@inject Context DbContext
+@model PhPopovich.ViewModels.Projects.AllProjectsPageViewModel
+
+@{
+    Layout = "_Layout";
+}
+
+<div class="about-us" id="projects">
+    <div class="container">
+        <h3 class="title">Мои работы</h3>
+        <p>@Html.Raw(Model.ProjectsPageModel.ServicesText)</p> <br/>
+    </div>
+    
+    @await Html.PartialAsync("Projects", Model.ProjectModels)
+</div>

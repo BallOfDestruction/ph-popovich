@@ -9,12 +9,10 @@
 <div class="about-us" id="services">
     <div class="container">
         <h3 class="title">Услуги</h3>
-        <p>@Html.Raw(Model.Page.ServicesText)</p>
+        <p>@Html.Raw(Model.Page.ServicesText)</p><br/>
     </div>
 
-    <div class="container">
-        @await Html.PartialAsync("Services", Model.ServiceModels)
-    </div>
+    @await Html.PartialAsync("Services", Model.ServiceModels)
 </div>
 
 
