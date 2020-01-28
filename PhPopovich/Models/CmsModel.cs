@@ -3,7 +3,7 @@ using PhPopovich.Controllers.cms;
 
 namespace PhPopovich.Models
 {
-    [Access(false, false,true,false)]
+    [Access]
     public class CmsModel : Entity<CmsModel>
     {
         [DisplayName("Заголовок")]
@@ -14,7 +14,8 @@ namespace PhPopovich.Models
         [Show]
         public override int Position { get; set; }
 
-        [Show(false,false,false,false)]
+        [Show]
+        [DisplayName("Class")]
         public string Class { get; set; }
 
         [Show(false, false, false, false)]

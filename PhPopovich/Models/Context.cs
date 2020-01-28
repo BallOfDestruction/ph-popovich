@@ -42,6 +42,8 @@ namespace PhPopovich.Models
 
         public DbSet<ProjectModel> ProjectModels { get; set; }
 
+        public DbSet<OrderModel> OrderModels { get; set; }
+        
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

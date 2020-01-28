@@ -198,6 +198,38 @@ namespace PhPopovich.Migrations
                     b.ToTable("Menus");
                 });
 
+            modelBuilder.Entity("PhPopovich.Models.OrderModel", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("About")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DesireDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("EmailOrPhone")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Position")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("OrderModels");
+                });
+
             modelBuilder.Entity("PhPopovich.Models.Pages.AboutPageModel", b =>
                 {
                     b.Property<Guid>("Id")

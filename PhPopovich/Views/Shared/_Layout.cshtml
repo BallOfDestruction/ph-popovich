@@ -40,6 +40,11 @@
         }
     </style>
 
+    <script type="text/javascript">
+            let currentPageIdTemplate = 'sitePage1';
+            let currentModuleTemplate = 'index';
+    </script>
+    
     <link type="text/css" rel="StyleSheet" href="/css/1806.css" />
 
     <link rel="stylesheet" href="/css/base.min.css" />
@@ -47,21 +52,10 @@
 
 
     <link rel="stylesheet" href="/css/ulightbox.min.css" />
-    <script src="/js/ulightbox.min.js"></script>
 
-    <link href="/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" type="text/css" />
-    <link href="/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-
-    <script type="text/javascript" src="/lib/jQuery/dist/jquery.js"></script>
-    <script type="text/javascript" src="/lib/moment/min/moment.min.js"></script>
-    <script type="text/javascript" src="/lib/bootstrap/dist/js/bootstrap.min.js"></script>
-    
-    <script type="text/javascript" src="/lib/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
-
-    <script src="/js/uwnd.min.js" ></script>
-    
-    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="/lib/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
+    <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css" />
+    <link href="/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css" />
     
 </head>
 
@@ -75,9 +69,30 @@
 
         @await Html.PartialAsync("Footer", footerViewModel)
 
+            
+        <script src="/js/ulightbox.min.js"></script>
+        <script type="text/javascript" src="/lib/jQuery/dist/jquery.js"></script>
+        <script type="text/javascript" src="/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/lib/moment/min/moment.min.js"></script>
+        <script type="text/javascript" src="/js/moment-with-locales.min.js"></script>
+        <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/js/moment-with-locales.min.js"></script>
+        <script type="text/javascript" src="/js/bootstrap-datetimepicker.min.js"></script>
+        
+        <script src="/js/uwnd.min.js" ></script>
+        
         <script src="/js/main.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
-
+        
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('.datetimepicker').datetimepicker({
+                    locale: 'ru',
+                    format: "DD.MM.YYYY"
+                });
+            });
+        </script>
+        
     </div>
 
 </body>

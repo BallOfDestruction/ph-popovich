@@ -1,4 +1,5 @@
-﻿@using PhPopovich.Models
+﻿@using PhPopovich.Controllers
+@using PhPopovich.Models
 @inject Context DbContext
 @model PhPopovich.ViewModels.Home.HomePageViewModel
 
@@ -30,6 +31,6 @@
 
 @await Html.PartialAsync("ProjectsPage", Model.ProjectsPageViewModel)
 
-@await Html.PartialAsync("Order")
+@await Html.PartialAsync("Order", new OrderViewModel())
 
 @await Html.PartialAsync("Contacts", Model.ContactsPageViewModel)
