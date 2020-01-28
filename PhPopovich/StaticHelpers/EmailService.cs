@@ -7,9 +7,9 @@ namespace PhPopovich.StaticHelpers
     {
         public static void Send(EmailModel emailModel)
         {
-            var client = new SmtpClient("mail.zmk-armada.ru", 25);
+            var client = new SmtpClient("mail.hosting.reg.ru", 25);
             client.UseDefaultCredentials = true;
-            client.Credentials = new NetworkCredential("support@zmk-armada.ru", "Xfgl65*8");
+            client.Credentials = new NetworkCredential("support@ph-popovich.com", "8U_f41xu");
             client.DeliveryMethod = SmtpDeliveryMethod.Network;
 
             var mailMessage = new MailMessage();

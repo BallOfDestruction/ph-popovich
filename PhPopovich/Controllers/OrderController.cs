@@ -27,10 +27,10 @@ namespace PhPopovich.Controllers
             await Context.OrderModels.AddAsync(orderModel);
             await Context.SaveChangesAsync();
 
-            var text = $"Контакная информация:{orderModel.EmailOrPhone}\n" +
-                       $"Имя фамилия:{orderModel.Name}\n" +
-                       $"Желаемая дата:{orderModel.DesireDate.ToShortDateString()}" +
-                       $"\nЧто конкретно хочет:{orderModel.About}";
+            var text = $"Контакная информация : {orderModel.EmailOrPhone}\n" +
+                       $"Имя фамилия : {orderModel.Name}\n" +
+                       $"Желаемая дата : {orderModel.DesireDate.ToShortDateString()}" +
+                       $"\nЧто конкретно хочет : {orderModel.About}";
             
             EmailService.Send(new EmailModel()
             {
