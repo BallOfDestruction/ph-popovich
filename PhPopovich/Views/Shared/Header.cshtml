@@ -19,7 +19,7 @@
                         <ul class="uMenuRoot">
                             @foreach (var menu in Model.Menus)
                             {
-                                <li><a @(menu.Menu == Model.CurrentPage ? "class=uMenuItemA" : "") href="@menu.Href"><span>@menu.Title</span></a></li>
+                                <li><a class="menu-a @(menu.Menu == Model.CurrentPage ? "uMenuItemA" : "")" href="@menu.Href"><span>@menu.Title</span></a></li>
                             }
                         </ul>
                     </div>
@@ -29,3 +29,4 @@
         </div>
     </div>
 </header>
+

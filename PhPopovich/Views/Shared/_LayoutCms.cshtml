@@ -11,26 +11,35 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>@ViewData["TitleToTopLabelE"]</title>
 
-	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+	<script src="/lib/jQuery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
 
-	<link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css" rel="stylesheet">
-	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
+	<link href="/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+	<script type="text/javascript" src="/lib/bootstrap/dist/js/bootstrap.min.js"></script>
 
-	<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.css" rel="stylesheet">
-	<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.js"></script>
-
+	<link href="/lib/summernote/dist/summernote-bs4.min.css" rel="stylesheet">
+	<script src="/lib/summernote/dist/summernote-bs4.min.js"></script>
+	
 </head>
+
 <body>
-	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-		<ul class="nav navbar-nav">
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto d-flex flex-wrap">
 			@foreach (var page in pages.OrderBy(w => w.Position))
 			{
-				<li>
+				<li class="nav-item p-2">
 					@if (page.IsSinglePage)
 					{
 						<a asp-controller="HomeCms"
 						   asp-action="EditFirst"
-						   asp-route-type="@(page.Class)">
+						   asp-route-type="@(page.Class)"
+						   class="nav-link">
 							@(page.Title)
 						</a>
 					}
@@ -38,7 +47,8 @@
 					{
 						<a asp-controller="HomeCms"
 						   asp-action="GetList"
-						   asp-route-type="@(page.Class)">
+						   asp-route-type="@(page.Class)"
+						   class="nav-link">
 							@(page.Title)
 							@if (page.NewCount > 0)
 							{
@@ -48,28 +58,28 @@
 					}
 				</li>
 			}
-			<li>
-				<a asp-controller="LoginCms" asp-action="Logout">
+			<li class="nav-item p-2">
+				<a asp-controller="LoginCms" asp-action="Logout" class="nav-link">
 					<span style="color: red">Выход</span>
 				</a>
 			</li>
 		</ul>
 	</div>
+</nav>
 
-	@RenderBody()
+@RenderBody()
 
-	<script type="text/javascript">
-		$(document).ready(function () {
-			$('.summernote').summernote({
-				placeholder: 'Введите текст',
-				lang: 'ru-RU',
-				tabsize: 1,
-				height: 150
-			});
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.summernote').summernote({
+            placeholder: 'Введите текст',
+            lang: 'ru-RU',
+            height: 150
+        });
 
-			$(':input').serialize();
-		});
-	</script>
+        $(':input').serialize();
+    });
+</script>
 
 </body>
 </html>

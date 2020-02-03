@@ -55,7 +55,7 @@
 
     <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css" />
-    <link href="/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css" />
+    <link href="/lib/fancybox/dist/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
     
 </head>
 
@@ -68,30 +68,40 @@
         @RenderBody()
 
         @await Html.PartialAsync("Footer", footerViewModel)
+        
 
-            
-        <script src="/js/ulightbox.min.js"></script>
+
         <script type="text/javascript" src="/lib/jQuery/dist/jquery.js"></script>
+        <script type="text/javascript">
+            let $= jQuery.noConflict();
+        </script>
+        <script type="text/javascript" src="/lib/fancybox/dist/jquery.fancybox.min.js"></script>
+        <script type="text/javascript" src="/js/ulightbox.min.js"></script>
+
         <script type="text/javascript" src="/lib/bootstrap/dist/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="/lib/moment/min/moment.min.js"></script>
-        <script type="text/javascript" src="/js/moment-with-locales.min.js"></script>
         <script type="text/javascript" src="/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="/js/moment-with-locales.min.js"></script>
-        <script type="text/javascript" src="/js/bootstrap-datetimepicker.min.js"></script>
         
         <script src="/js/uwnd.min.js" ></script>
         
-        <script src="/js/main.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
         
-        <script type="text/javascript">
-            $(document).ready(function() {
-                $('.datetimepicker').datetimepicker({
-                    locale: 'ru',
-                    format: "DD.MM.YYYY"
-                });
-            });
+        <script src="/js/main.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
+        
+        
+        <script>
+              
+                $(document).ready(function() {
+                    $('.menu-a').click(function(){
+                    
+                        $('header div[id^=\'uNMenuDiv\']').toggleClass('openMenu')
+                })})
         </script>
+        
         
     </div>
 
