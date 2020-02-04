@@ -9,7 +9,9 @@
 <div class="about-us" id="about">
     <div class="container">
         <h3 class="title">Обо мне</h3>
-        <p>@Html.Raw(Model.Page.AboutHtml)</p>
+        <div class="common-text-container">
+            @Html.Raw(Model.Page.AboutHtml)
+        </div>
     </div>
 </div>
 

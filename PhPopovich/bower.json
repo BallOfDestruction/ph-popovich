@@ -7,7 +7,6 @@
     "jQuery": "3.1.1",
     "bootstrap-datepicker": "v1.7.0-RC1",
     "summernote": "v0.8.15",
-    "fancybox": "v3.5.7",
-    "popper.js": "v2.0.4"
+    "fancybox": "v3.5.7"
   }
 }

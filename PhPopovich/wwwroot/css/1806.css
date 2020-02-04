@@ -562,7 +562,7 @@ input[type=button]#order-button {
 
 .about-us {
     padding: 35px 0;
-    text-align: center
+    text-align: justify;
 }
 
     .about-us h3 {
@@ -570,10 +570,10 @@ input[type=button]#order-button {
         font-weight: 700
     }
 
-    .about-us p {
-        max-width: 750px;
+    .common-text-container {
+        max-width: 800px;
         line-height: 1.67;
-        color: #5f5656;
+        color: #000000;
         margin: 0 auto
     }
 
