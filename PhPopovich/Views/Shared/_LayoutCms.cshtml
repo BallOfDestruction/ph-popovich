@@ -74,7 +74,19 @@
         $('.summernote').summernote({
             placeholder: 'Введите текст',
             lang: 'ru-RU',
-            height: 200
+            height: 200, 
+            toolbar: [
+              ['style', ['style']],
+              ['font', ['bold', 'underline',  'strikethrough', 'superscript', 'subscript', 'clear']],
+              ['fontname', ['fontname']],
+              ['fontsize', ['fontsize']],
+              ['fontsizeunit', ['fontsizeunit']],
+              ['color', ['color']],
+              ['para', ['ul', 'ol', 'paragraph', 'heigth']],
+              ['table', ['table']],
+              ['insert', ['hr']],
+              ['view', ['fullscreen', 'codeview', 'undo', 'redo', 'help']],
+            ],
         });
 
         $(':input').serialize();
