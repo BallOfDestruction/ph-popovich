@@ -10,6 +10,13 @@
 {
     <figure>
         <img src="@Model.ImageModel.Url" alt="img">
-        <figcaption><a href="#"><span>@Html.Raw(Model.About)</span></a></figcaption>
+        <figcaption>
+            <a href="/Project?id=@Model.Id">
+                <div class="w-100 text-center">
+                    @Html.Raw(Model.About)
+                    <p> Смотреть еще </p>
+                </div>
+            </a>
+        </figcaption>
     </figure>
 }

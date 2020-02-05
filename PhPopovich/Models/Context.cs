@@ -80,6 +80,10 @@ namespace PhPopovich.Models
             modelBuilder.Entity<MainPageModel>().HasMany(w => w.Images)
                 .WithOne(w => w.MainPageModelGallery).HasForeignKey(w => w.MainPageModelGalleryId)
                 .OnDelete(DeleteBehavior.SetNull);
+            
+            modelBuilder.Entity<ProjectModel>().HasMany(w => w.Images)
+                .WithOne(w => w.ProjectModelGallery).HasForeignKey(w => w.ProjectModelGalleryId)
+                .OnDelete(DeleteBehavior.SetNull);
         }
 
         public IQueryable<T> GetDbSet<T>(T type)

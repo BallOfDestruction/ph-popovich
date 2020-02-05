@@ -24,6 +24,13 @@ namespace PhPopovich.Models
         [Show(false, false, false, false)]
         public MainPageModel MainPageModelGallery { get; set; }
 
+        
+        [Show(false, false, false, false)]
+        public Guid? ProjectModelGalleryId { get; set; }
+
+        [Show(false, false, false, false)]
+        public ProjectModel ProjectModelGallery { get; set; }
+        
 
         [Show(false, false, false, false)]
         public Guid? ServiceModelId { get; set; }

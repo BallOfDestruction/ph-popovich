@@ -299,7 +299,7 @@ namespace PhPopovich.Controllers.cms
                     {
                         typeConvert = Nullable.GetUnderlyingType(typeConvert);
 
-                        object changedType = null;
+                        object changedType;
 
                         if (typeConvert == typeof(Guid))
                         {
