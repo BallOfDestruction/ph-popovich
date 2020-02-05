@@ -53,8 +53,7 @@
 
     <link rel="stylesheet" href="/css/ulightbox.min.css" />
 
-    <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css" />
+    <link href="/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="/lib/fancybox/dist/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
     
 </head>
@@ -69,8 +68,6 @@
 
         @await Html.PartialAsync("Footer", footerViewModel)
         
-
-
         <script type="text/javascript" src="/lib/jQuery/dist/jquery.js"></script>
         <script type="text/javascript">
             let $= jQuery.noConflict();
@@ -80,7 +77,6 @@
 
         <script type="text/javascript" src="/lib/bootstrap/dist/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="/lib/moment/min/moment.min.js"></script>
-        <script type="text/javascript" src="/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="/js/moment-with-locales.min.js"></script>
         
         <script src="/js/uwnd.min.js" ></script>
@@ -92,16 +88,13 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
         
-        
         <script>
-              
-                $(document).ready(function() {
-                    $('.menu-a').click(function(){
-                    
-                        $('header div[id^=\'uNMenuDiv\']').toggleClass('openMenu')
-                })})
+            $(document).ready(function() {
+                $('.menu-a').click(function(){
+                
+                    $('header div[id^=\'uNMenuDiv\']').toggleClass('openMenu')
+            })})
         </script>
-        
         
     </div>
 

@@ -10,7 +10,7 @@
     <input type="file" title="Выберите изображение" class="btn btn-primary" id="@(Model?.PropertyName)image" accept="image/*" />
     <input type="submit" value="Загрузить" class="btn btn-primary" onclick="uploadImage()" />
     <script>
-        uploadImage = function() {
+        function uploadImage() {
             var file = $("#@(Model?.PropertyName)image")[0].files[0];
             var formData = new FormData();
             formData.append("uploadedImage", file);

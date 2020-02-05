@@ -146,7 +146,7 @@ namespace PhPopovich.Migrations
                     b.Property<string>("ImageType")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid?>("MainPageModelId")
+                    b.Property<Guid?>("MainPageModelGalleryId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("Position")
@@ -165,6 +165,8 @@ namespace PhPopovich.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("MainPageModelGalleryId");
 
                     b.ToTable("Images");
                 });
@@ -320,9 +322,6 @@ namespace PhPopovich.Migrations
                     b.Property<DateTime>("DateCreated")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid?>("ImageModelId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<string>("MainTitle")
                         .HasColumnType("nvarchar(max)");
 
@@ -342,10 +341,6 @@ namespace PhPopovich.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("ImageModelId")
-                        .IsUnique()
-                        .HasFilter("[ImageModelId] IS NOT NULL");
 
                     b.ToTable("MainPageModels");
                 });
@@ -521,11 +516,11 @@ namespace PhPopovich.Migrations
                         .OnDelete(DeleteBehavior.SetNull);
                 });
 
-            modelBuilder.Entity("PhPopovich.Models.Pages.MainPageModel", b =>
+            modelBuilder.Entity("PhPopovich.Models.ImageModel", b =>
                 {
-                    b.HasOne("PhPopovich.Models.ImageModel", "ImageModel")
-                        .WithOne("MainPageModel")
-                        .HasForeignKey("PhPopovich.Models.Pages.MainPageModel", "ImageModelId")
+                    b.HasOne("PhPopovich.Models.Pages.MainPageModel", "MainPageModelGallery")
+                        .WithMany("Images")
+                        .HasForeignKey("MainPageModelGalleryId")
                         .OnDelete(DeleteBehavior.SetNull);
                 });
 

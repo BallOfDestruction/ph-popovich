@@ -48,13 +48,6 @@ namespace PhPopovich.Models
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<ImageModel>()
-                .HasOne(w => w.MainPageModel)
-                .WithOne(w => w.ImageModel)
-                .IsRequired(false)
-                .HasForeignKey<MainPageModel>(w => w.ImageModelId)
-                .OnDelete(DeleteBehavior.SetNull);
-
             modelBuilder.Entity<PhoneModel>()
                 .HasOne(w => w.ContactsPageModel)
                 .WithMany(w => w.PhoneModels)
@@ -81,6 +74,11 @@ namespace PhPopovich.Models
                 .WithOne(w => w.ImageModel)
                 .IsRequired(false)
                 .HasForeignKey<ProjectModel>(w => w.ImageModelId)
+                .OnDelete(DeleteBehavior.SetNull);
+            
+            
+            modelBuilder.Entity<MainPageModel>().HasMany(w => w.Images)
+                .WithOne(w => w.MainPageModelGallery).HasForeignKey(w => w.MainPageModelGalleryId)
                 .OnDelete(DeleteBehavior.SetNull);
         }
 

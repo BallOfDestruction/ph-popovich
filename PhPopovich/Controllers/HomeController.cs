@@ -27,7 +27,7 @@ namespace PhPopovich.Controllers
                     .Include(w => w.EmailModels)
                     .Include(w => w.PhoneModels)
                     .FirstOrDefault()),
-                Page = Context.MainPageModels.Include(w => w.ImageModel).FirstOrDefault(),
+                Page = Context.MainPageModels.Include(w => w.Images).FirstOrDefault(),
                 AboutPageViewModel = new AboutPageViewModel(Context.AboutPageModels.FirstOrDefault()),
                 ServicesPageViewModel = new ServicesPageViewModel(Context.ServicesPageModels.FirstOrDefault()),
                 ProjectsPageViewModel = new ProjectsPageViewModel(Context.ProjectsPageModels.FirstOrDefault()),

@@ -499,7 +499,7 @@ input[type=button]#order-button {
     position: relative
 }
 
-.photo img {
+.photo div {
     width: 100%;
     height: 100%;
     display: block;

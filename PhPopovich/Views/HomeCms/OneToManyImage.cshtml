@@ -19,10 +19,10 @@
 </div>
 
 <input type="file" title="Выберите изображение" class="btn btn-primary" accept="image/*" id="@(uploaderId)"/>
-<input type="submit" value="Загрузить" class="btn btn-primary" onclick="uploadOneToManyImageModel@(Model.LinkPropertyName)()"/>
+<input type="submit" value="Загрузить" class="btn btn-primary" onclick="uploadOneToManyImageModel('@Model.LinkPropertyName')"/>
 
 <script>
-    uploadOneToManyImageModel@(Model.LinkPropertyName) = function () {
+    function uploadOneToManyImageModel() {
         var file = $("#@(uploaderId)")[0].files[0];
         var formData = new FormData();
         formData.append("uploadedImageModel", file);

@@ -19,9 +19,10 @@ namespace PhPopovich.Models
 
 
         [Show(false, false, false, false)]
-        public Guid? MainPageModelId { get; set; }
+        public Guid? MainPageModelGalleryId { get; set; }
 
-        public MainPageModel MainPageModel { get; set; }
+        [Show(false, false, false, false)]
+        public MainPageModel MainPageModelGallery { get; set; }
 
 
         [Show(false, false, false, false)]

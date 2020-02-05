@@ -537,17 +537,17 @@ namespace PhPopovich.Controllers.cms
         #region ManyImageWork
 
         [HttpPost]
-        public Guid AddOneToManyImage(IFormFile uploadedImage, string propertyName, Guid id)
+        public Guid AddOneToManyImageModel(IFormFile uploadedImageModel, string propertyName, Guid id)
         {
-            if (uploadedImage != null && !string.IsNullOrEmpty(propertyName))
+            if (uploadedImageModel != null && !string.IsNullOrEmpty(propertyName))
             {
-                var indexOf = uploadedImage.ContentType.IndexOf('/');
-                var extension = indexOf == -1 ? "file" : uploadedImage.ContentType.Substring(indexOf + 1);
+                var indexOf = uploadedImageModel.ContentType.IndexOf('/');
+                var extension = indexOf == -1 ? "file" : uploadedImageModel.ContentType.Substring(indexOf + 1);
 
                 var image = new ImageModel
                 {
-                    Title = uploadedImage.FileName,
-                    ImageType = uploadedImage.ContentType,
+                    Title = uploadedImageModel.FileName,
+                    ImageType = uploadedImageModel.ContentType,
                     Extension = extension,
                 };
 
@@ -560,7 +560,7 @@ namespace PhPopovich.Controllers.cms
                 var path = "/UploadImages/" + image.Id + "." + extension;
                 using (var fileStream = new FileStream(_appEnvironment.WebRootPath + path, FileMode.Create))
                 {
-                    uploadedImage.CopyTo(fileStream);
+                    uploadedImageModel.CopyTo(fileStream);
                 }
 
                 image.Url = path;
@@ -573,7 +573,7 @@ namespace PhPopovich.Controllers.cms
         }
 
         [HttpGet]
-        public IActionResult AddOneToManyImage(Guid id, string propertyName)
+        public IActionResult AddOneToManyImageModel(Guid id, string propertyName)
         {
             var image = Context.Images.FirstOrDefault(w => w.Id == id);
 
