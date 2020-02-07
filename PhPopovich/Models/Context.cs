@@ -44,6 +44,8 @@ namespace PhPopovich.Models
 
         public DbSet<OrderModel> OrderModels { get; set; }
         
+        public DbSet<ArticleModel> ArticleModels { get; set; }
+        
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -76,6 +78,12 @@ namespace PhPopovich.Models
                 .HasForeignKey<ProjectModel>(w => w.ImageModelId)
                 .OnDelete(DeleteBehavior.SetNull);
             
+            modelBuilder.Entity<ImageModel>()
+                .HasOne(w => w.ArticleModel)
+                .WithOne(w => w.ImageModel)
+                .IsRequired(false)
+                .HasForeignKey<ArticleModel>(w => w.ImageModelId)
+                .OnDelete(DeleteBehavior.SetNull);
             
             modelBuilder.Entity<MainPageModel>().HasMany(w => w.Images)
                 .WithOne(w => w.MainPageModelGallery).HasForeignKey(w => w.MainPageModelGalleryId)

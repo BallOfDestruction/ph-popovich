@@ -16,11 +16,14 @@
 <!doctype html>
 <html lang="ru">
 <head>
+    
+    @await Html.PartialAsync("YandexMetrica")
+
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <title>@headerViewModel?.Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
+
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Material+Icons|Cousine:400,700&amp;subset=cyrillic' rel='stylesheet' type='text/css'/>
     <style>
@@ -45,38 +48,38 @@
             let currentPageIdTemplate = 'sitePage1';
             let currentModuleTemplate = 'index';
     </script>
-    
+
     <link rel="stylesheet" href="fonts/icomoon/style.css">
 
-    <link type="text/css" rel="StyleSheet" href="/css/1806.css" />
+    <link type="text/css" rel="StyleSheet" href="/css/1806.css"/>
 
-    <link rel="stylesheet" href="/css/base.min.css" />
-    <link rel="stylesheet" href="/css/layer7.min.css" />
+    <link rel="stylesheet" href="/css/base.min.css"/>
+    <link rel="stylesheet" href="/css/layer7.min.css"/>
 
 
-    <link rel="stylesheet" href="/css/ulightbox.min.css" />
+    <link rel="stylesheet" href="/css/ulightbox.min.css"/>
 
-    <link href="/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="/lib/fancybox/dist/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
-    
-    
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/magnific-popup.css">
-        <link rel="stylesheet" href="css/jquery-ui.css">
-        <link rel="stylesheet" href="css/owl.carousel.min.css">
-        <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    
-        <link rel="stylesheet" href="css/bootstrap-datepicker.css">
-    
-        <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
-    
-        <link rel="stylesheet" href="css/aos.css">
-        <link rel="stylesheet" href="css/jquery.scrollbar.css">
-        <link rel="stylesheet" href="css/fancybox.min.css">
-        <link rel="stylesheet" href="css/swiper.min.css">
-    
-        <link rel="stylesheet" href="css/style.css">
-    
+    <link href="/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="/lib/fancybox/dist/jquery.fancybox.min.css" rel="stylesheet" type="text/css"/>
+
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/jquery.scrollbar.css">
+    <link rel="stylesheet" href="css/fancybox.min.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+
 </head>
 
 <body class="base">
@@ -89,36 +92,40 @@
 
         @await Html.PartialAsync("Footer", footerViewModel)
         
-        <script type="text/javascript" src="/lib/jQuery/dist/jquery.js"></script>
+
         <script type="text/javascript">
-            let $= jQuery.noConflict();
+           let $= jQuery.noConflict();
         </script>
-        <script type="text/javascript" src="/lib/fancybox/dist/jquery.fancybox.min.js"></script>
+        <script type="text/javascript" src="/lib/jQuery/dist/jquery.js"></script>
+
+
         <script type="text/javascript" src="/js/ulightbox.min.js"></script>
 
         <script type="text/javascript" src="/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+
+        <script type="text/javascript" src="/lib/fancybox/dist/jquery.fancybox.min.js"></script>
         <script type="text/javascript" src="/lib/moment/min/moment.min.js"></script>
         <script type="text/javascript" src="/js/moment-with-locales.min.js"></script>
-        
+
         <script src="/js/uwnd.min.js" ></script>
-        
+
         <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
-        
+
         <script src="/js/main.js"></script>
-        
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
-        
+
         <script>
-            $(document).ready(function() {
-                $('.menu-a').click(function(){
-                
-                    $('header div[id^=\'uNMenuDiv\']').toggleClass('openMenu')
-            })})
+           $(document).ready(function() {
+               $('.menu-a').click(function(){
+               
+                   $('header div[id^=\'uNMenuDiv\']').toggleClass('openMenu')
+           })})
         </script>
         
         
-        <script src="js/jquery-migrate-3.0.1.min.js"></script>
+        @* <script src="js/jquery-migrate-3.0.1.min.js"></script> *@
         <script src="js/jquery-ui.js"></script>
         <script src="js/popper.min.js"></script>
         <script src="js/owl.carousel.min.js"></script>

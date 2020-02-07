@@ -42,5 +42,11 @@ namespace PhPopovich.Models
         public Guid? ProjectModelId { get; set; }
 
         public ProjectModel ProjectModel { get; set; }
+        
+        
+        [Show(false, false, false, false)]
+        public Guid? ArticleModelId { get; set; }
+
+        public ArticleModel ArticleModel { get; set; }
     }
 }

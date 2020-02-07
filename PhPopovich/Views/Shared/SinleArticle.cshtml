@@ -1,0 +1,23 @@
+﻿@using PhPopovich.Models
+@inject Context DbContext
+@model ArticleModel
+
+@{
+    Layout = null;
+}
+
+@if (Model != null)
+{
+    <div class="col-md">
+        <div class="p-4">
+            <div class="card">
+                <img src="@Model.ImageModel?.Url" class="card-img-top p-2">
+                <div class="card-body">
+                    <h5 class="card-title">@Model.Title</h5>
+                    <p class="card-text">@Html.Raw(Model.Subtitle)</p>
+                    <a href="/Blog/Get?id=@Model.Id" class="btn btn-primary">См. полностью</a>
+                </div>
+            </div>
+        </div>
+    </div>
+}

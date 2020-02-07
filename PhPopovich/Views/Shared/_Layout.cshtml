@@ -16,6 +16,8 @@
 <!doctype html>
 <html lang="ru">
 <head>
+    @await Html.PartialAsync("YandexMetrica")
+    
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <title>@headerViewModel?.Title</title>
@@ -44,18 +46,18 @@
             let currentPageIdTemplate = 'sitePage1';
             let currentModuleTemplate = 'index';
     </script>
-    
-    <link type="text/css" rel="StyleSheet" href="/css/1806.css" />
 
-    <link rel="stylesheet" href="/css/base.min.css" />
-    <link rel="stylesheet" href="/css/layer7.min.css" />
+    <link type="text/css" rel="StyleSheet" href="/css/1806.css"/>
+
+    <link rel="stylesheet" href="/css/base.min.css"/>
+    <link rel="stylesheet" href="/css/layer7.min.css"/>
 
 
-    <link rel="stylesheet" href="/css/ulightbox.min.css" />
+    <link rel="stylesheet" href="/css/ulightbox.min.css"/>
 
-    <link href="/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="/lib/fancybox/dist/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
-    
+    <link href="/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="/lib/fancybox/dist/jquery.fancybox.min.css" rel="stylesheet" type="text/css"/>
+
 </head>
 
 <body class="base">
@@ -68,14 +70,19 @@
 
         @await Html.PartialAsync("Footer", footerViewModel)
         
+      
         <script type="text/javascript" src="/lib/jQuery/dist/jquery.js"></script>
+   
         <script type="text/javascript">
             let $= jQuery.noConflict();
         </script>
-        <script type="text/javascript" src="/lib/fancybox/dist/jquery.fancybox.min.js"></script>
+        
         <script type="text/javascript" src="/js/ulightbox.min.js"></script>
 
         <script type="text/javascript" src="/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+        
+        <script type="text/javascript" src="/lib/fancybox/dist/jquery.fancybox.min.js"></script>  
+        
         <script type="text/javascript" src="/lib/moment/min/moment.min.js"></script>
         <script type="text/javascript" src="/js/moment-with-locales.min.js"></script>
         

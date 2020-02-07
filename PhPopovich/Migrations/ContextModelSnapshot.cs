@@ -45,6 +45,39 @@ namespace PhPopovich.Migrations
                     b.ToTable("AdminModels");
                 });
 
+            modelBuilder.Entity("PhPopovich.Models.ArticleModel", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("ImageModelId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("Position")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Subtitle")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Text")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ImageModelId")
+                        .IsUnique()
+                        .HasFilter("[ImageModelId] IS NOT NULL");
+
+                    b.ToTable("ArticleModels");
+                });
+
             modelBuilder.Entity("PhPopovich.Models.CmsModel", b =>
                 {
                     b.Property<Guid>("Id")
@@ -135,6 +168,9 @@ namespace PhPopovich.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("ArticleModelId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("DateCreated")
@@ -511,6 +547,14 @@ namespace PhPopovich.Migrations
                         .HasFilter("[ImageModelId] IS NOT NULL");
 
                     b.ToTable("ServiceModels");
+                });
+
+            modelBuilder.Entity("PhPopovich.Models.ArticleModel", b =>
+                {
+                    b.HasOne("PhPopovich.Models.ImageModel", "ImageModel")
+                        .WithOne("ArticleModel")
+                        .HasForeignKey("PhPopovich.Models.ArticleModel", "ImageModelId")
+                        .OnDelete(DeleteBehavior.SetNull);
                 });
 
             modelBuilder.Entity("PhPopovich.Models.EmailModel", b =>

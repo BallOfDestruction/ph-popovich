@@ -1,0 +1,15 @@
+﻿@using PhPopovich.Models
+@inject Context DbContext
+@model PhPopovich.ViewModels.Blog.ArticleViewModel
+
+@{
+    Layout = "_Layout";
+}
+
+<div class="container">
+    <div class="col-md-10 offset-md-1">
+        <div class="row">
+            @Html.Raw(Model.ArticleModel.Text)
+        </div>
+    </div>
+</div>
