@@ -1,4 +1,6 @@
-﻿namespace PhPopovich.ViewModels.Common
+﻿using PhPopovich.Models.Pages;
+
+namespace PhPopovich.ViewModels.Common
 {
     public class CommonPageViewModel<T> : CommonPageViewModel
     {
@@ -14,6 +16,11 @@
             HeaderViewModel = headerViewModel;
             FooterViewModel = footerViewModel;
             Page = page;
+        }
+
+        public override IMetaInfo GetMetaPage()
+        {
+            return Page as IMetaInfo;
         }
     }
 }

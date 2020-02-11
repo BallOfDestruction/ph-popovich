@@ -28,8 +28,6 @@ namespace PhPopovich.Models
 
         public DbSet<ProjectsPageModel> ProjectsPageModels { get; set; }
 
-        public DbSet<OrderPageModel> OrderPageModels { get; set; }
-
         public DbSet<ContactsPageModel> ContactsPageModels { get; set; }
 
         public DbSet<BlogPageModel> BlogPageModels { get; set; }
@@ -85,6 +83,24 @@ namespace PhPopovich.Models
                 .HasForeignKey<ArticleModel>(w => w.ImageModelId)
                 .OnDelete(DeleteBehavior.SetNull);
             
+            
+            
+            modelBuilder.Entity<ImageModel>()
+                .HasOne(w => w.MainPageModelMeta)
+                .WithOne(w => w.MetaImageModel)
+                .IsRequired(false)
+                .HasForeignKey<MainPageModel>(w => w.MetaImageModelId)
+                .OnDelete(DeleteBehavior.SetNull);
+            
+            modelBuilder.Entity<ImageModel>()
+                .HasOne(w => w.BlogPageModelMeta)
+                .WithOne(w => w.MetaImageModel)
+                .IsRequired(false)
+                .HasForeignKey<BlogPageModel>(w => w.MetaImageModelId)
+                .OnDelete(DeleteBehavior.SetNull);
+
+
+
             modelBuilder.Entity<MainPageModel>().HasMany(w => w.Images)
                 .WithOne(w => w.MainPageModelGallery).HasForeignKey(w => w.MainPageModelGalleryId)
                 .OnDelete(DeleteBehavior.SetNull);

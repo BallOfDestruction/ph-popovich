@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.IO;
 using System.Linq;
 using System.Linq.Expressions;
@@ -181,24 +181,24 @@ namespace PhPopovich.Controllers.cms
         {
             var set = Context.Set<T>().AsQueryable();
 
-            var strType = typeof(string);
-            var enumerableObjects = typeof(IEnumerable);
             var classes = type.GetType().GetProperties().Where(w =>
-                (w.PropertyType.IsClass || w.PropertyType.IsArray) && w.PropertyType != strType);
+                (w.PropertyType.IsClass || w.PropertyType.IsArray) && 
+                w.PropertyType != Types.String && 
+                w.GetCustomAttribute<NotMappedAttribute>() == null);
 
             var classesSet = classes.Aggregate(set, (current, property) =>
             {
                 var ccc = current.Include(property.Name);
 
                 if (property.PropertyType.IsArray ||
-                    property.PropertyType.GetInterfaces().Any(w => w == enumerableObjects))
+                    property.PropertyType.GetInterfaces().Any(w => w == Types.Enumerable))
                 {
                     var types = property.PropertyType.GenericTypeArguments;
 
                     foreach (var type2 in types)
                     {
                         ccc = type2.GetProperties()
-                            .Where(w => (w.PropertyType.IsClass || w.PropertyType.IsArray) && w.PropertyType != strType)
+                            .Where(w => (w.PropertyType.IsClass || w.PropertyType.IsArray) && w.PropertyType != Types.String)
                             .Aggregate(ccc, (cc, pro) =>
                             {
                                 var a = cc.Include($"{property.Name}.{pro.Name}");

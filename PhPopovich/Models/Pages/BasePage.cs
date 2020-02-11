@@ -6,6 +6,6 @@ namespace PhPopovich.Models.Pages
         where T : IEntity
     {
         [DisplayName("Заголовок")]
-        public string PageTitle { get; set; }
+        public virtual string PageTitle { get; set; }
     }
 }

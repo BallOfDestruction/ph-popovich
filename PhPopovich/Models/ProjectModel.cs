@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using PhPopovich.Controllers.cms;
+using PhPopovich.Models.Pages;
 
 namespace PhPopovich.Models
 {
-    public class ProjectModel : Entity<ProjectModel>
+    public class ProjectModel : MetaBasePage<ProjectModel>
     {
         [DisplayName("Заголовок")]
         [Show]
@@ -36,5 +38,25 @@ namespace PhPopovich.Models
         [Show(false, true, true, false)]
         [ShowTitle]
         public List<ImageModel> Images { get; set; }
+        
+        
+        //meta
+        [Show(false, false, false, false)]
+        public override string MetaTitle => Title;
+        
+        [Show(false, false, false, false)]
+        public override string MetaDescription => Title;
+        
+        [NotMapped]
+        [Show(false, false, false, false)]
+        public override Guid? MetaImageModelId => ImageModelId;
+
+        [NotMapped]
+        [Show(false, false, false, false)] 
+        public override ImageModel MetaImageModel => ImageModel;
+        
+        [NotMapped]
+        [Show(false, false, false, false)] 
+        public override string PageTitle { get; set; }
     }
 }

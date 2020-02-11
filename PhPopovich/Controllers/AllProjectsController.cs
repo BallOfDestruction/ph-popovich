@@ -15,7 +15,7 @@ namespace PhPopovich.Controllers
 
         public IActionResult Index()
         {
-            var allProjects = new AllProjectsPageViewModel(GetHeader(), GetFooterViewModel());
+            var allProjects = new AllProjectsPageViewModel(GetHeaderViewModel(), GetFooterViewModel());
             allProjects.HeaderViewModel.CurrentPage = Menu.Projects;
             allProjects.ProjectsPageModel = Context.ProjectsPageModels.FirstOrDefault();
             

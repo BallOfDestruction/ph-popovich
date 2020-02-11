@@ -21,13 +21,16 @@ namespace PhPopovich.Controllers
         {
             var home = new HomePageViewModel()
             {
-                HeaderViewModel = GetHeader(),
+                HeaderViewModel = GetHeaderViewModel(),
                 FooterViewModel = GetFooterViewModel(),
                 ContactsPageViewModel = new ContactsPageViewModel(Context.ContactsPageModels
                     .Include(w => w.EmailModels)
                     .Include(w => w.PhoneModels)
                     .FirstOrDefault()),
-                Page = Context.MainPageModels.Include(w => w.Images).FirstOrDefault(),
+                Page = Context.MainPageModels
+                    .Include(w => w.Images)
+                    .Include(w => w.MetaImageModel)
+                    .FirstOrDefault(),
                 AboutPageViewModel = new AboutPageViewModel(Context.AboutPageModels.FirstOrDefault()),
                 ServicesPageViewModel = new ServicesPageViewModel(Context.ServicesPageModels.FirstOrDefault()),
                 ProjectsPageViewModel = new ProjectsPageViewModel(Context.ProjectsPageModels.FirstOrDefault()),

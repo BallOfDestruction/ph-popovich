@@ -1,9 +1,8 @@
 ﻿using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using Newtonsoft.Json;
 
-namespace PhPopovich.Controllers
+namespace PhPopovich.ViewModels.Order
 {
     public class OrderViewModel
     { 
@@ -17,7 +16,6 @@ namespace PhPopovich.Controllers
         
         [Required(ErrorMessage = "Вам нужно указать желаему дату")]
         [DataType(DataType.Date)]
-        [JsonConverter(typeof(MyDateTimeConverter))]
         [DisplayName("Желаемая дата")]
         public DateTime DesireDate { get; set; } = DateTime.Now.AddDays(1);
         

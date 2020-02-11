@@ -1,11 +1,13 @@
 ﻿using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using PhPopovich.Controllers.cms;
+using PhPopovich.Models.Pages;
 
 namespace PhPopovich.Models
 {
-    public class ArticleModel : Entity<ArticleModel>
+    public class ArticleModel : MetaBasePage<ArticleModel>
     {
         [DisplayName("Заголовок")]
         [Show]
@@ -18,7 +20,6 @@ namespace PhPopovich.Models
 
         [DisplayName("Подзаголовок")]
         [Show(false)]
-        [DataType(DataType.Html)]
         public string Subtitle { get; set; }
         
         [Show(false)]
@@ -33,5 +34,25 @@ namespace PhPopovich.Models
         [DisplayName("Изображение")]
         [Required]
         public ImageModel ImageModel { get; set; }
+        
+        
+        //meta
+        [Show(false, false, false, false)]
+        public override string MetaTitle => Title;
+        
+        [Show(false, false, false, false)]
+        public override string MetaDescription => Subtitle;
+        
+        [NotMapped]
+        [Show(false, false, false, false)]
+        public override Guid? MetaImageModelId => ImageModelId;
+
+        [NotMapped]
+        [Show(false, false, false, false)] 
+        public override ImageModel MetaImageModel => ImageModel;
+        
+        [NotMapped]
+        [Show(false, false, false, false)] 
+        public override string PageTitle { get; set; }
     }
 }

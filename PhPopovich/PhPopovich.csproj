@@ -12,6 +12,12 @@
   <ItemGroup>
     <Compile Remove="Migrations\20200122095532_2.cs" />
     <Compile Remove="Migrations\20200122095532_2.Designer.cs" />
+    <Compile Remove="Migrations\20200211115934_30.cs" />
+    <Compile Remove="Migrations\20200211115934_30.Designer.cs" />
+    <Compile Remove="Migrations\20200211123231_34.cs" />
+    <Compile Remove="Migrations\20200211123231_34.Designer.cs" />
+    <Compile Remove="Migrations\20200211123830_35.cs" />
+    <Compile Remove="Migrations\20200211123830_35.Designer.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="MailKit" Version="2.5.0" />

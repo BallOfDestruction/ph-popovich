@@ -10,7 +10,7 @@ namespace PhPopovich.Controllers
     {
         protected Context Context { get; set; }
 
-        protected HeaderViewModel GetHeader()
+        protected HeaderViewModel GetHeaderViewModel()
         {
             var header = new HeaderViewModel()
             {
@@ -18,7 +18,6 @@ namespace PhPopovich.Controllers
                 Menus = Context.Menus.OrderBy(w => w.Position).ToList()
                     .Select(w => new MenuViewModel(w.Name, w.Href, w.Menu)).ToList(),
             };
-            header.Title = header.CompanyName;
             return header;
         }
 

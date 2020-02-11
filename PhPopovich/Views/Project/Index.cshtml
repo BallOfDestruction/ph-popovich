@@ -6,7 +6,7 @@
     Layout = "_LayoutGallery";
 }
 
-@if (Model.ProjectModel.Images.Count == 0)
+@if (Model.Page.Images.Count == 0)
 {
     <table style="height: 600px" class="w-100">
         <tbody>
@@ -27,7 +27,7 @@ else
 
         <div class="swiper-container gallery-top">
             <div class="swiper-wrapper">
-                @foreach (var image in Model.ProjectModel.Images)
+                @foreach (var image in Model.Page.Images)
                 {
                     <div class="swiper-slide cover" style="background-image: url('@image?.Url');">
                         <a href="@image?.Url" data-fancybox="gallery" class="zoom">
@@ -53,7 +53,7 @@ else
     
         <div class="swiper-container gallery-thumbs">
             <div class="swiper-wrapper">
-                @foreach (var image in Model.ProjectModel.Images)
+                @foreach (var image in Model.Page.Images)
                 {
                     <div class="swiper-slide cover" style="background-image:url(@image.Url)"></div>
                 }

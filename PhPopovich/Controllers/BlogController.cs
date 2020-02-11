@@ -3,7 +3,6 @@ using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PhPopovich.Models;
-using PhPopovich.StaticHelpers;
 using PhPopovich.ViewModels.Blog;
 
 namespace PhPopovich.Controllers
@@ -19,9 +18,11 @@ namespace PhPopovich.Controllers
         {
             var home = new BlogPageViewModel()
             {
-                HeaderViewModel = GetHeader(),
+                HeaderViewModel = GetHeaderViewModel(),
                 FooterViewModel = GetFooterViewModel(),
-                Page = Context.BlogPageModels.FirstOrDefault(),
+                Page = Context.BlogPageModels
+                    .Include(w => w.MetaImageModel)
+                    .FirstOrDefault(),
                 ArticleModels = Context.ArticleModels
                     .Include(w => w.ImageModel)
                     .ToList()
@@ -35,17 +36,14 @@ namespace PhPopovich.Controllers
         {
             var home = new ArticleViewModel()
             {
-                HeaderViewModel = GetHeader(),
+                HeaderViewModel = GetHeaderViewModel(),
                 FooterViewModel = GetFooterViewModel(),
-                ArticleModel = Context.ArticleModels
+                Page = Context.ArticleModels
                     .Include(w => w.ImageModel)
                     .FirstOrDefault(w => w.Id == id)
             };
             
             home.HeaderViewModel.CurrentPage = Menu.Blog;
-            home.HeaderViewModel.Title += " - " + home.ArticleModel?.Title;
-            home.HeaderViewModel.Description = home.ArticleModel?.Subtitle;
-            home.HeaderViewModel.MetaUrlImage = home.ArticleModel?.ImageModel?.GetFullUrl(HttpContext.Request);
             return View(home);
         }
     }

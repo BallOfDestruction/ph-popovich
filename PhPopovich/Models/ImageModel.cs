@@ -48,5 +48,18 @@ namespace PhPopovich.Models
         public Guid? ArticleModelId { get; set; }
 
         public ArticleModel ArticleModel { get; set; }
+        
+        
+        
+        [Show(false, false, false, false)]
+        public Guid? MainPageModelMetaId { get; set; }
+
+        public MainPageModel MainPageModelMeta { get; set; }
+        
+        
+        [Show(false, false, false, false)]
+        public Guid? BlogPageModelMetaId { get; set; }
+
+        public BlogPageModel BlogPageModelMeta { get; set; }
     }
 }

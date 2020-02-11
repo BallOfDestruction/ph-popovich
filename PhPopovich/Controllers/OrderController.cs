@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using PhPopovich.Models;
 using PhPopovich.StaticHelpers;
+using PhPopovich.ViewModels.Order;
 using EmailModel = PhPopovich.StaticHelpers.EmailModel;
 
 namespace PhPopovich.Controllers

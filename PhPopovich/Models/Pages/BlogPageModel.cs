@@ -4,7 +4,7 @@ namespace PhPopovich.Models.Pages
 {
     [SingleObject]
     [Access(false, false, true, false)]
-    public class BlogPageModel : BasePage<BlogPageModel>
+    public class BlogPageModel : MetaBasePage<BlogPageModel>
     {
     }
 }

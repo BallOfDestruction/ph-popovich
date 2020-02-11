@@ -7,7 +7,7 @@ namespace PhPopovich.Models.Pages
 {
     [SingleObject]
     [Access(false, false, true, false)]
-    public class MainPageModel : BasePage<MainPageModel>
+    public class MainPageModel : MetaBasePage<MainPageModel>
     {
         [DisplayName("Основной текст")]
         [DataType(DataType.Html)]

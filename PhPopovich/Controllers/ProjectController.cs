@@ -16,11 +16,12 @@ namespace PhPopovich.Controllers
 
         public IActionResult Index(Guid id)
         {
-            var projects = new ProjectPageViewModel(GetHeader(), GetFooterViewModel());
-            projects.ProjectModel = Context.ProjectModels
+            var page = Context.ProjectModels
                 .Include(w => w.ImageModel)
                 .Include(w => w.Images)
                 .FirstOrDefault(w => w.Id == id);
+            
+            var projects = new ProjectPageViewModel(page, GetHeaderViewModel(), GetFooterViewModel());
 
             return View(projects);
         }
