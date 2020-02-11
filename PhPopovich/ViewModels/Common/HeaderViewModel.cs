@@ -7,6 +7,10 @@ namespace PhPopovich.ViewModels.Common
     public class HeaderViewModel
     {
         public string Title { get; set; }
+        
+        public string Description { get; set; }
+        
+        public string MetaUrlImage { get; set; }
 
         public string CompanyName { get; set; } = App.CompanyName;
 

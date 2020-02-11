@@ -9,7 +9,15 @@
 <div class="container">
     <div class="col-md-10 offset-md-1">
         <div class="row">
-            @Html.Raw(Model.ArticleModel.Text)
+            <div class="mt-4 mb-4">
+                <img src="@Model.ArticleModel.ImageModel?.Url" />
+            </div>
+            <h1>@Model.ArticleModel.Title</h1>
+            <div>@Html.Raw(Model.ArticleModel.Text)</div>
+            <hr class="col-12"/>
+            <div class="mt-2 mb-2 text-left sharethis-inline-share-buttons"></div>
+            <hr class="col-12"/>
+            <div class="mb-2">Комментарии</div>
         </div>
     </div>
 </div>

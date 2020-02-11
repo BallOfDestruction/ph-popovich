@@ -49,8 +49,6 @@ namespace PhPopovich
                 app.UseExceptionHandler("/Home/Error");
             }
 
-            app.UseHttpsRedirection();
-
             app.UseStaticFiles();
 
             app.UseAuthentication();

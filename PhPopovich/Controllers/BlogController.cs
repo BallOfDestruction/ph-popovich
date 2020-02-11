@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using PhPopovich.Models;
+using PhPopovich.StaticHelpers;
 using PhPopovich.ViewModels.Blog;
 
 namespace PhPopovich.Controllers
@@ -30,7 +30,7 @@ namespace PhPopovich.Controllers
 
             return View(home);
         }
-        
+
         public IActionResult Get(Guid id)
         {
             var home = new ArticleViewModel()
@@ -41,8 +41,11 @@ namespace PhPopovich.Controllers
                     .Include(w => w.ImageModel)
                     .FirstOrDefault(w => w.Id == id)
             };
+            
             home.HeaderViewModel.CurrentPage = Menu.Blog;
-
+            home.HeaderViewModel.Title += " - " + home.ArticleModel?.Title;
+            home.HeaderViewModel.Description = home.ArticleModel?.Subtitle;
+            home.HeaderViewModel.MetaUrlImage = home.ArticleModel?.ImageModel?.GetFullUrl(HttpContext.Request);
             return View(home);
         }
     }
