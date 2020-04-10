@@ -124,5 +124,20 @@
     <_ContentIncludedByDefault Remove="wwwroot\lib\eonasdan-bootstrap-datetimepicker\src\sass\bootstrap-datetimepicker-build.scss" />
     <_ContentIncludedByDefault Remove="wwwroot\lib\eonasdan-bootstrap-datetimepicker\src\sass\_bootstrap-datetimepicker.scss" />
     <_ContentIncludedByDefault Remove="wwwroot\lib\eonasdan-bootstrap-datetimepicker\tasks\bump_version.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-ajax-unobtrusive\.bower.json" />
+    <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-ajax-unobtrusive\.gitattributes" />
+    <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-ajax-unobtrusive\.gitignore" />
+    <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-ajax-unobtrusive\build.cmd" />
+    <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-ajax-unobtrusive\build.msbuild" />
+    <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-ajax-unobtrusive\CONTRIBUTING.md" />
+    <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-ajax-unobtrusive\gulpfile.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-ajax-unobtrusive\LICENSE.txt" />
+    <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-ajax-unobtrusive\Microsoft.jQuery.Unobtrusive.Ajax.nuspec" />
+    <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-ajax-unobtrusive\package-lock.json" />
+    <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-ajax-unobtrusive\package.json" />
+    <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-ajax-unobtrusive\README.md" />
+    <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-ajax-unobtrusive\run.ps1" />
+    <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-ajax-unobtrusive\src\jquery.unobtrusive-ajax.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-ajax-unobtrusive\version.props" />
   </ItemGroup>
 </Project>
