@@ -51,8 +51,10 @@ else
 {
     <img src="@(Model.Url)" style="max-height: 400px; max-width: 900px" alt="Изображение"/>
 
-    <button class="btn btn-primary" style="margin-bottom: 20px; margin-top: 20px" onclick="removeImage()">Удалить файл</button>
-
+    <div class="col-md-12">
+        <button class="btn btn-primary" style="margin-bottom: 20px; margin-top: 20px" onclick="removeImage()">Удалить файл</button>
+    </div>
+    
     <script>
         function removeImage() {
             let formData = new FormData();
