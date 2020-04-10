@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PhPopovich.Models;
 
 namespace PhPopovich.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20200213114123_40")]
+    partial class _40
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -56,9 +58,6 @@ namespace PhPopovich.Migrations
 
                     b.Property<Guid?>("ImageModelId")
                         .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("KeyWords")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("MetaDescription")
                         .HasColumnType("nvarchar(max)");
@@ -354,9 +353,6 @@ namespace PhPopovich.Migrations
                     b.Property<DateTime>("DateCreated")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("KeyWords")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("MetaDescription")
                         .HasColumnType("nvarchar(max)");
 
@@ -424,9 +420,6 @@ namespace PhPopovich.Migrations
 
                     b.Property<DateTime>("DateCreated")
                         .HasColumnType("datetime2");
-
-                    b.Property<string>("KeyWords")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("MainTitle")
                         .HasColumnType("nvarchar(max)");
@@ -558,9 +551,6 @@ namespace PhPopovich.Migrations
 
                     b.Property<Guid?>("ImageModelId")
                         .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("KeyWords")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("MetaDescription")
                         .HasColumnType("nvarchar(max)");

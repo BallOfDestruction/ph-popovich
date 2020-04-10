@@ -1,4 +1,6 @@
-﻿@using PhPopovich.Models
+﻿@using System.Globalization
+@using PhPopovich.Models
+@using PhPopovich.ViewModels.Comment
 @inject Context DbContext
 @model PhPopovich.ViewModels.Blog.ArticleViewModel
 
@@ -17,7 +19,33 @@
             <hr class="col-12"/>
             <div class="mt-2 mb-2 text-left sharethis-inline-share-buttons"></div>
             <hr class="col-12"/>
-            <div class="mb-2">Комментарии</div>
+            
+            @await Html.PartialAsync("Comment", new CommentViewModel() { ArticleId = Model.Page.Id})
+
+            <div class="m-2 mt-4"><h3>Комментарии</h3></div>
+            @foreach (var commentModel in Model.Page.CommentModels)
+            {
+                <hr class="col-12"/>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-2">
+                            <img src="http://2.gravatar.com/avatar/273d6ad6e2176dba811ed8b2b99af312?s=100&d=mm&r=g" class="rounded-circle mx-auto d-block"/>
+                        </div>
+                        <div class="col-10">
+                            <div class="">
+                                @commentModel.Name
+                            </div>
+                            <div class="">
+                                @commentModel.DateCreated.ToString("g", CultureInfo.GetCultureInfo("ru"))
+                            </div>
+                            <div class="mt-2 mb-2">
+                                <span>@commentModel.Text</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+            <hr class="col-12"/>
         </div>
     </div>
 </div>

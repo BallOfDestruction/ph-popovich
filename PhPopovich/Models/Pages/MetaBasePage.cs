@@ -23,5 +23,9 @@ namespace PhPopovich.Models.Pages
         [DisplayName("Мета изображение")]
         [Required]
         public virtual ImageModel MetaImageModel { get; set; }
+        
+        [Show(false)]
+        [DisplayName("Ключевые слова")]
+        public virtual string KeyWords { get; set; }
     }
 }

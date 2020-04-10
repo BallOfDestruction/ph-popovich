@@ -28,7 +28,7 @@
     var files = properties.Where(w => w.PropertyType == Types.File).ToList();
     var images = properties.Where(w => w.PropertyType == Types.Image).ToList();
 
-    var oneToManyImages = properties.Where(w => w.PropertyType == Types.ListImage);
+    var oneToManyImages = properties.Where(w => w.PropertyType == Types.ListImage).ToList();
 
     var other = properties.Where(w => w.PropertyType != Types.File && w.PropertyType != Types.Image && w.PropertyType != Types.ListImage).ToList();
 
@@ -56,99 +56,107 @@
     <div class="col-md-12">
         <hr />
     </div>
-
     <div class="col-md-12">
-
         <h4>@(cmsSection?.Title)</h4>
     </div>
     <div class="col-md-12">
-
         <hr />
     </div>
 
-    <div class="row">
-        <div class="col-md-12">
-            @foreach (var propertyInfo in files)
-            {
-                var name = ReflectionHelper.GetNameProperty(propertyInfo);
-                var file = propertyInfo.GetValue(Model) as FileModel ?? new FileModel();
-                var fileViewModel = new FileViewModel()
+    @if (files.Any())
+    {
+        <div class="row">
+            <div class="col-md-12">
+                @foreach (var propertyInfo in files)
                 {
-                    Id = file.Id,
-                    FileId = file.Id,
-                };
-
-                <div class="col-md-12" style="margin-bottom: 30px;">
-                    <div class="form-group">
-                        <div class="col-md-2">
-                            <span style="font-weight: bold">
-                                @Html.DisplayName(name)
-                            </span>
-                        </div>
-                        <div class="col-md-10" id="@(fileViewModel.Id)">
-                            @await Html.PartialAsync("File", fileViewModel)
+                    var name = ReflectionHelper.GetNameProperty(propertyInfo);
+                    var file = propertyInfo.GetValue(Model) as FileModel ?? new FileModel();
+                    var fileViewModel = new FileViewModel()
+                    {
+                        Id = file.Id,
+                        FileId = file.Id,
+                    };
+    
+                    <div class="col-md-12" style="margin-bottom: 30px;">
+                        <div class="form-group">
+                            <div class="col-md-2">
+                                <span style="font-weight: bold">
+                                    @Html.DisplayName(name)
+                                </span>
+                            </div>
+                            <div class="col-md-10" id="@(fileViewModel.Id)">
+                                @await Html.PartialAsync("File", fileViewModel)
+                            </div>
                         </div>
                     </div>
-                </div>
-            }
+                }
+            </div>
         </div>
-    </div>
-    
+    }
 
-    <div class="row">
-        <div class="col-md-12">
-            @foreach (var propertyInfo in oneToManyImages)
-            {
-                var name = ReflectionHelper.GetNameProperty(propertyInfo);
-                var imagesModel = propertyInfo.GetValue(Model) as List<ImageModel> ?? new List<ImageModel>();
-                var propertyName = propertyInfo.GetCustomAttribute<OneTwoManyAttribute>()?.PropertyName;
-                var imageViewModel = new OneToMayImageViewModel(imagesModel.Select(w => (w.Id, w.Url)).ToList(), id.Value, propertyName);
-
-                <div class="col-md-12" style="margin-bottom: 30px;">
-                    <div class="form-group">
-                        <div class="col-md-2">
-                            <span style="font-weight: bold">
-                                @Html.DisplayName(name)
-                            </span>
-                        </div>
-                        <div class="col-md-10">
-                            @await Html.PartialAsync("OneToManyImage", imageViewModel)
-                        </div>
-                    </div>
-                </div>
-            }
-        </div>
-    </div>
     
-    
-    <div class="row">
-        <div class="col-md-12">
-            @foreach (var propertyInfo in images)
-            {
-                var name = ReflectionHelper.GetNameProperty(propertyInfo);
-                var image = propertyInfo.GetValue(Model) as ImageModel ?? new ImageModel();
-                var imageViewModel = new ImageViewModel()
+    @if (oneToManyImages.Any())
+    {
+        <div class="row">
+            <div class="col-md-12">
+              
+                @foreach (var propertyInfo in oneToManyImages)
                 {
-                    PropertyName = propertyInfo.Name,
-                    ImageId = image.Id,
-                    Url = image.Url,
-                };
-
-                <div class="col-md-12" style="margin-bottom: 30px;">
-                    <div class="form-group">
-                        <div class="col-md-2">
-                            <span style="font-weight: bold">
-                                @Html.DisplayName(name)
-                            </span>
-                        </div>
-                        <div class="col-md-10" id="@(imageViewModel.PropertyName)">
-                            @await Html.PartialAsync("Image", imageViewModel)
+                    var name = ReflectionHelper.GetNameProperty(propertyInfo);
+                    var imagesModel = propertyInfo.GetValue(Model) as List<ImageModel> ?? new List<ImageModel>();
+                    var propertyName = propertyInfo.GetCustomAttribute<OneTwoManyAttribute>()?.PropertyName;
+                    var imageViewModel = new OneToMayImageViewModel(imagesModel.Select(w => (w.Id, w.Url)).ToList(), id.Value, propertyName);
+    
+                    <div class="col-md-12" style="margin-bottom: 30px;">
+                        <div class="form-group">
+                            <div class="col-md-2">
+                                <span style="font-weight: bold">
+                                    @Html.DisplayName(name)
+                                </span>
+                            </div>
+                            <div class="col-md-10">
+                                @await Html.PartialAsync("OneToManyImage", imageViewModel)
+                            </div>
                         </div>
                     </div>
-                </div>
-            }
+                }
+            </div>
         </div>
-    </div>
+    }
+
+    
+    @if (images.Any())
+    {
+        <div class="row">
+            <div class="col-md-12">
+                @foreach (var propertyInfo in images)
+                {
+                    var name = ReflectionHelper.GetNameProperty(propertyInfo);
+                    var image = propertyInfo.GetValue(Model) as ImageModel ?? new ImageModel();
+                    var imageViewModel = new ImageViewModel()
+                    {
+                        PropertyName = propertyInfo.Name,
+                        ImageId = image.Id,
+                        Url = image.Url,
+                    };
+    
+                    <div class="col-md-12" style="margin-bottom: 30px;">
+                        <div class="form-group">
+                            <div class="col-md-2">
+                                <span style="font-weight: bold">
+                                    @Html.DisplayName(name)
+                                </span>
+                            </div>
+                            <div class="col-md-10" id="@(imageViewModel.PropertyName)">
+                                @await Html.PartialAsync("Image", imageViewModel)
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    }
+
 
     <div class="row">
         <div class="col-md-12">

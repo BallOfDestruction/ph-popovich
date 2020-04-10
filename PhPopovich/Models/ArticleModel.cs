@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -35,6 +36,12 @@ namespace PhPopovich.Models
         [Required]
         public ImageModel ImageModel { get; set; }
         
+        
+        [DisplayName("Комментарии")]
+        [OneTwoMany("ArticleModelId")]
+        [Show(false, false, false, false)]
+        [ShowTitle]
+        public List<CommentModel> CommentModels { get; set; }
         
         //meta
         [Show(false, false, false, false)]

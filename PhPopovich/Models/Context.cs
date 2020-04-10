@@ -42,6 +42,8 @@ namespace PhPopovich.Models
 
         public DbSet<OrderModel> OrderModels { get; set; }
         
+        public DbSet<CommentModel> CommentModels { get; set; }
+        
         public DbSet<ArticleModel> ArticleModels { get; set; }
         
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -101,12 +103,22 @@ namespace PhPopovich.Models
 
 
 
-            modelBuilder.Entity<MainPageModel>().HasMany(w => w.Images)
-                .WithOne(w => w.MainPageModelGallery).HasForeignKey(w => w.MainPageModelGalleryId)
+            modelBuilder.Entity<MainPageModel>()
+                .HasMany(w => w.Images)
+                .WithOne(w => w.MainPageModelGallery)
+                .HasForeignKey(w => w.MainPageModelGalleryId)
                 .OnDelete(DeleteBehavior.SetNull);
             
-            modelBuilder.Entity<ProjectModel>().HasMany(w => w.Images)
-                .WithOne(w => w.ProjectModelGallery).HasForeignKey(w => w.ProjectModelGalleryId)
+            modelBuilder.Entity<ProjectModel>()
+                .HasMany(w => w.Images)
+                .WithOne(w => w.ProjectModelGallery)
+                .HasForeignKey(w => w.ProjectModelGalleryId)
+                .OnDelete(DeleteBehavior.SetNull);
+            
+            modelBuilder.Entity<ArticleModel>()
+                .HasMany(w => w.CommentModels)
+                .WithOne(w => w.ArticleModel)
+                .HasForeignKey(w => w.ArticleModelId)
                 .OnDelete(DeleteBehavior.SetNull);
         }
 

@@ -6,6 +6,8 @@
         
         public string MetaDescription { get; set; }
         
+        public string KeyWords { get; set; }
+
         public ImageModel MetaImageModel { get; set; }
     }
 }

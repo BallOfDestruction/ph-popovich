@@ -34,14 +34,21 @@ namespace PhPopovich.Controllers
 
         public IActionResult Get(Guid id)
         {
+            var sortedComments = Context.CommentModels
+                .Where(w => w.ArticleModelId == id)
+                .OrderBy(w => w.DateCreated)
+                .ToList();
+            
             var home = new ArticleViewModel()
             {
                 HeaderViewModel = GetHeaderViewModel(),
                 FooterViewModel = GetFooterViewModel(),
                 Page = Context.ArticleModels
                     .Include(w => w.ImageModel)
-                    .FirstOrDefault(w => w.Id == id)
+                    .First(w => w.Id == id)
             };
+
+            home.Page.CommentModels = sortedComments;
             
             home.HeaderViewModel.CurrentPage = Menu.Blog;
             return View(home);

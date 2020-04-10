@@ -515,9 +515,10 @@ namespace PhPopovich.Controllers.cms
         }
 
         [HttpPost]
-        public IActionResult RemoveImage(Guid id)
+        public IActionResult RemoveImage(Guid id, string idImageProperty)
         {
             var imageViewModel = new ImageViewModel();
+            imageViewModel.PropertyName = idImageProperty;
 
             var image = Context.Images.FirstOrDefault(w => w.Id == id);
             if (image != null)

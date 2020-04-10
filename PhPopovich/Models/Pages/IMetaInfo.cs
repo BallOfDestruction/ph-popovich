@@ -5,6 +5,8 @@
         string MetaTitle { get; set; }
         
         string MetaDescription { get; set; }
+        
+        string KeyWords { get; set; }
                 
         ImageModel MetaImageModel { get; set; }
     }
