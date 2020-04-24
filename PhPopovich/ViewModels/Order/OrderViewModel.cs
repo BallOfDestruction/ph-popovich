@@ -6,20 +6,20 @@ namespace PhPopovich.ViewModels.Order
 {
     public class OrderViewModel
     { 
-        [Required(ErrorMessage = "Вам нужно указать имя и фамилию")]
-        [DisplayName("Имя фамилия")]
+        [Required(ErrorMessage = "Как к вам можно обращаться?")]
+        [DisplayName("Имя")]
         public string Name { get; set; }
         
-        [Required(ErrorMessage = "Вам нужно указать контактные данные")]
-        [DisplayName("Телефон или почта")]
+        [Required(ErrorMessage = "Укажите контактные данные")]
+        [DisplayName("Контактные данные")]
         public string EmailOrPhone { get; set; }
         
-        [Required(ErrorMessage = "Вам нужно указать желаему дату")]
+        [Required(ErrorMessage = "Укажите желаемую дату")]
         [DataType(DataType.Date)]
         [DisplayName("Желаемая дата")]
         public DateTime DesireDate { get; set; } = DateTime.Now.AddDays(1);
         
-        [Required(ErrorMessage = "Опишите чтобы выхотели")]
+        [Required(ErrorMessage = "Опишите чтобы вы хотели")]
         [DisplayName("Чтобы вы хотели")]
         public string About { get; set; }
     }

@@ -28,7 +28,7 @@ namespace PhPopovich.Models
         public Guid? ImageModelId { get; set; }
 
         [Show(false, false)]
-        [DisplayName("Изображение")]
+        [DisplayName("Обложка")]
         [Required]
         public ImageModel ImageModel { get; set; }
         

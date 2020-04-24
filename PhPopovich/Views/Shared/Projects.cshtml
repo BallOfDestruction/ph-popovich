@@ -17,16 +17,23 @@
                 var third = index + 2 < Model.Count ? Model[index + 2] : null;
                 index += 3;
 
-                <div class="img-wrap">
-                    @await Html.PartialAsync("Project", first)
-                    @await Html.PartialAsync("Project", second)
-                </div>
-                if (third != null)
-                {
-                    <div class="img-wrap">
-                        @await Html.PartialAsync("Project", third)
+                <div class="row">
+                    <div class="col">
+                        <div class="img-wrap">
+                            @await Html.PartialAsync("Project", first)
+                        </div>
                     </div>
-                }
+                    <div class="col">
+                        <div class="img-wrap">
+                            @await Html.PartialAsync("Project", second)
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="img-wrap">
+                            @await Html.PartialAsync("Project", third)
+                        </div>
+                    </div>
+                </div>
             }
         }
     </div>
