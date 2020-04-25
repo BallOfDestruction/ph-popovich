@@ -29,13 +29,15 @@ else
             <div class="swiper-wrapper">
                 @foreach (var image in Model.Page.Images)
                 {
-                    <div class="swiper-slide cover" style="background-image: url('@image?.Url');">
+                    <div class="swiper-slide cover text-center" style="background: white" >
+                        <img src="@image?.Url" class="img-fluid" alt="Responsive image" style="height: 100%; width: auto">
+                        
                         <a href="@image?.Url" data-fancybox="gallery" class="zoom">
                             <span class="icon-search"></span>
                         </a>
                         <div class="img-info">
                             <span class="btn-toggle-expand">
-                                <span class="icon-call_made"></span>
+                                <span class="icon-call_made" style="font-weight: bold"></span>
                             </span>
                             <div class="img-info-content">
                                 <h2>Интересный заголовок</h2>
@@ -47,15 +49,21 @@ else
                     </div>
                 }
             </div>
-            <div class="swiper-button-next swiper-button-white"></div>
-            <div class="swiper-button-prev swiper-button-white"></div>
+            
+            <div class="swiper-button-next h-75" style="background-color: rgba(238,238,238,0.7); width: 40px; top: 12.5%; background-image: url('images/keyboard_arrow_right-black-48dp.svg')">
+            </div>
+            
+            <div class="swiper-button-prev h-75" style="background-color: rgba(238,238,238,0.7); width: 40px; top: 12.5%; background-image: url('images/keyboard_arrow_left-black-48dp.svg')">
+            </div>
         </div>
     
         <div class="swiper-container gallery-thumbs">
             <div class="swiper-wrapper">
                 @foreach (var image in Model.Page.Images)
                 {
-                    <div class="swiper-slide cover" style="background-image:url(@image.Url)"></div>
+                    <div class="swiper-slide cover" style="background-image:url(@image.Url)">
+                        <img src="@image.Url"/>
+                    </div>
                 }
             </div>
         </div>

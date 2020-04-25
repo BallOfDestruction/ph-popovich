@@ -813,7 +813,7 @@ h1, h2, h3, h4, h5,
   bottom: 0;
   left: 0;
   max-width: 400px;
-  background: #fff;
+  background: #EEEEEE;
   padding: 30px;
   width: 60px;
   height: 60px;
@@ -843,6 +843,8 @@ h1, h2, h3, h4, h5,
     height: 60px;
     line-height: 60px;
     text-align: center;
+    font-size: large;
+    color: #0b0b0b;
     cursor: pointer; }
     .img-info .btn-toggle-expand.active > span {
       display: inline-block;
@@ -859,14 +861,15 @@ h1, h2, h3, h4, h5,
   position: absolute;
   width: 60px;
   height: 60px;
-  background: #fff;
-  color: #b3b3b3;
+  background: #EEEEEE;
+  color: #0b0b0b;
   bottom: 0;
   right: 0; }
   .zoom span {
     position: absolute;
     top: 50%;
     left: 50%;
+    font-size: large;
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%); }
