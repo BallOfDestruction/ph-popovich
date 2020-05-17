@@ -3,6 +3,7 @@ using App.CMS.Repositories.Admin;
 using App.CMS.Repositories.CmsModels;
 using App.CMS.Repositories.File;
 using App.CMS.Repositories.Image;
+using App.CMS.StaticHelpers;
 using App.Models;
 using App.Repositories.Cms.Admins;
 using App.Repositories.Cms.CmsModels;
@@ -42,21 +43,24 @@ namespace App
                 });
 
 
-            services.AddSingleton<IImageRepository, ImagesRepository>();
-            services.AddSingleton<ICmsImageModelRepository, ImageCmsFakeRepository>();
+            services.AddScoped<IImageRepository, ImagesRepository>();
+            services.AddScoped<ICmsImageModelRepository, ImageCmsFakeRepository>();
             
-            services.AddSingleton<ICmsAdminRepository, AdminRepository>();
+            services.AddScoped<ICmsAdminRepository, AdminRepository>();
             
-            services.AddSingleton<ICmsFilesRepository, FileRepository>();
+            services.AddScoped<ICmsFilesRepository, FileRepository>();
 
-            services.AddSingleton<ICmsCmsModelRepository, CmsModelRepository>();
+            services.AddScoped<ICmsCmsModelRepository, CmsModelRepository>();
 
             
-            services.AddSingleton(new CMSOptions()
+            services.AddSingleton(new CmsOptions()
             {
                 SmptCredentialsMail = "support@ph-popovich.com",
                 SmptCredentialsPassword = "8U_f41xu"
             });
+
+            services.AddSingleton(new AppTypesOptions());
+            services.AddSingleton<TypesOptions>(provider => provider.GetService<AppTypesOptions>());
             
             services.Configure<RazorViewEngineOptions>(option =>
             {

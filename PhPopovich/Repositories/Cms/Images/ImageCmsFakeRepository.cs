@@ -7,9 +7,9 @@ namespace App.Repositories.Cms.Images
 {
     public class ImageCmsFakeRepository : ICmsImageModelRepository
     {
-        private readonly ImagesRepository _imagesRepository;
+        private readonly IImageRepository _imagesRepository;
 
-        public ImageCmsFakeRepository(ImagesRepository imagesRepository)
+        public ImageCmsFakeRepository(IImageRepository imagesRepository)
         {
             _imagesRepository = imagesRepository;
         }

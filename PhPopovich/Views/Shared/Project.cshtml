@@ -11,6 +11,7 @@
     <figure>
         <img src="@Model.ImageModel.Url" alt="img">
         <figcaption>
+            @* ReSharper disable once Html.PathError *@
             <a href="/Project?id=@Model.Id">
                 <div class="w-100 text-center">
                     @Html.Raw(Model.About)

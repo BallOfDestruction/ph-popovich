@@ -16,7 +16,7 @@ namespace App.Controllers
         }
  
         [HttpPost]
-        public async Task<IActionResult> MakeOrder(OrderViewModel orderViewModel, CMSOptions cmsOptions)
+        public async Task<IActionResult> MakeOrder(OrderViewModel orderViewModel, CmsOptions cmsOptions)
         {
             var orderModel = new OrderModel()
             {
