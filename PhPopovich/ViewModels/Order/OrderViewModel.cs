@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace PhPopovich.ViewModels.Order
+namespace App.ViewModels.Order
 {
     public class OrderViewModel
     { 

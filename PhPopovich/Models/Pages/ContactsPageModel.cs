@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel;
-using PhPopovich.Controllers.cms;
+using App.CMS.Controllers.Attributes;
 
-namespace PhPopovich.Models.Pages
+namespace App.Models.Pages
 {
     [SingleObject]
     [Access(false, false, true, false)]

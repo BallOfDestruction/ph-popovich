@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
-using PhPopovich.Models;
-using PhPopovich.Models.Pages;
-using PhPopovich.ViewModels.Common;
+using App.Models;
+using App.Models.Pages;
+using App.ViewModels.Common;
 
-namespace PhPopovich.ViewModels.Projects
+namespace App.ViewModels.Projects
 {
     public class AllProjectsPageViewModel : CommonPageViewModel
     {

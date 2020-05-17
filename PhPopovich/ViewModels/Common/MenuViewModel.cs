@@ -1,6 +1,6 @@
-﻿using PhPopovich.Models;
+﻿using App.Models;
 
-namespace PhPopovich.ViewModels.Common
+namespace App.ViewModels.Common
 {
     public class MenuViewModel
     {

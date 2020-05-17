@@ -1,11 +1,12 @@
 ﻿using System.Threading.Tasks;
+using App.CMS;
+using App.CMS.StaticHelpers;
+using App.Models;
+using App.ViewModels.Order;
 using Microsoft.AspNetCore.Mvc;
-using PhPopovich.Models;
-using PhPopovich.StaticHelpers;
-using PhPopovich.ViewModels.Order;
-using EmailModel = PhPopovich.StaticHelpers.EmailModel;
+using EmailModel = App.CMS.StaticHelpers.EmailModel;
 
-namespace PhPopovich.Controllers
+namespace App.Controllers
 {
     public class OrderController : CommonController
     {
@@ -15,7 +16,7 @@ namespace PhPopovich.Controllers
         }
  
         [HttpPost]
-        public async Task<IActionResult> MakeOrder(OrderViewModel orderViewModel)
+        public async Task<IActionResult> MakeOrder(OrderViewModel orderViewModel, CMSOptions cmsOptions)
         {
             var orderModel = new OrderModel()
             {
@@ -39,7 +40,7 @@ namespace PhPopovich.Controllers
                 To = "support@ph-popovich.com",
                 Subject = "Новый заказ",
                 Body = text
-            });
+            }, cmsOptions);
             
             return RedirectToAction("Index", "Home");
         }

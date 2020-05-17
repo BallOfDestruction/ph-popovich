@@ -1,4 +1,4 @@
-﻿namespace PhPopovich.ViewModels.Common
+﻿namespace App.ViewModels.Common
 {
     public class PartialPageViewModel<T>
     {

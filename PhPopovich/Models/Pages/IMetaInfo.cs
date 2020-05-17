@@ -1,4 +1,5 @@
-﻿namespace PhPopovich.Models.Pages
+﻿
+namespace App.Models.Pages
 {
     public interface IMetaInfo
     {

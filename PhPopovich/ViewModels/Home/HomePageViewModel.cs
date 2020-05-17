@@ -1,11 +1,11 @@
-﻿using PhPopovich.Models.Pages;
-using PhPopovich.ViewModels.About;
-using PhPopovich.ViewModels.Common;
-using PhPopovich.ViewModels.Contacts;
-using PhPopovich.ViewModels.Projects;
-using PhPopovich.ViewModels.Services;
+﻿using App.Models.Pages;
+using App.ViewModels.About;
+using App.ViewModels.Common;
+using App.ViewModels.Contacts;
+using App.ViewModels.Projects;
+using App.ViewModels.Services;
 
-namespace PhPopovich.ViewModels.Home
+namespace App.ViewModels.Home
 {
     public class HomePageViewModel : CommonPageViewModel<MainPageModel>
     {

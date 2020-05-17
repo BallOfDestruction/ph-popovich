@@ -1,15 +1,16 @@
 ﻿using System.Linq;
+using App.CMS.Models;
+using App.Models.Pages;
 using Microsoft.EntityFrameworkCore;
-using PhPopovich.Models.Pages;
 
-namespace PhPopovich.Models
+namespace App.Models
 {
     public class Context : DbContext
     {
         public Context(DbContextOptions options) : base(options)
         {
         }
-
+        
         public DbSet<FileModel> Files { get; set; }
 
         public DbSet<AdminModel> AdminModels { get; set; }
@@ -17,7 +18,7 @@ namespace PhPopovich.Models
         public DbSet<ImageModel> Images { get; set; }
 
         public DbSet<CmsModel> CmsModels { get; set; }
-
+        
         public DbSet<MainPageModel> MainPageModels { get; set; }
       
         public DbSet<MenuModel> Menus { get; set; }

@@ -1,9 +1,10 @@
 ﻿using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using PhPopovich.Controllers.cms;
+using App.CMS.Controllers.Attributes;
+using App.CMS.Models;
 
-namespace PhPopovich.Models
+namespace App.Models
 {
     public class ServiceModel : Entity<ServiceModel>
     {

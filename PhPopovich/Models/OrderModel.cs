@@ -1,8 +1,9 @@
 ﻿using System;
 using System.ComponentModel;
-using PhPopovich.Controllers.cms;
+using App.CMS.Controllers.Attributes;
+using App.CMS.Models;
 
-namespace PhPopovich.Models
+namespace App.Models
 {
     [Access]
     public class OrderModel : Entity<OrderModel>

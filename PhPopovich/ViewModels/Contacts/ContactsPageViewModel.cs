@@ -1,7 +1,7 @@
-﻿using PhPopovich.Models.Pages;
-using PhPopovich.ViewModels.Common;
+﻿using App.Models.Pages;
+using App.ViewModels.Common;
 
-namespace PhPopovich.ViewModels.Contacts
+namespace App.ViewModels.Contacts
 {
     public class ContactsPageViewModel : PartialPageViewModel<ContactsPageModel>
     {

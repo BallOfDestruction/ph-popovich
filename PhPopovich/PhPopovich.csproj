@@ -8,6 +8,7 @@
     <OutputType>WinExe</OutputType>
     <StartupObject />
     <AssemblyName>PhPopovich</AssemblyName>
+    <RootNamespace>App</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <Compile Remove="Migrations\20200122095532_2.cs" />
@@ -41,13 +42,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="..\.editorconfig" Link=".editorconfig" />
-    <None Include="Views\Shared\CMS\DetailsInnerObject.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Enums\" />
     <Folder Include="wwwroot\fonts\" />
     <Folder Include="wwwroot\images\" />
-    <Folder Include="EntityFrameworkPaginateCore\" />
     <Folder Include="wwwroot\lib\" />
   </ItemGroup>
   <ItemGroup>
@@ -138,5 +137,15 @@
     <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-ajax-unobtrusive\run.ps1" />
     <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-ajax-unobtrusive\src\jquery.unobtrusive-ajax.js" />
     <_ContentIncludedByDefault Remove="wwwroot\lib\jquery-ajax-unobtrusive\version.props" />
+    <_ContentIncludedByDefault Remove="Views\HomeCms\Create.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\HomeCms\Details.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\HomeCms\Edit.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\HomeCms\File.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\HomeCms\GetList.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\HomeCms\Image.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\HomeCms\OneToManyImage.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\HomeCms\OneToManySingleImage.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\HomeCms\_ViewImports.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\LoginCms\Index.cshtml" />
   </ItemGroup>
 </Project>

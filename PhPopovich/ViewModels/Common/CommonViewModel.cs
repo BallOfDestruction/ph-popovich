@@ -1,6 +1,6 @@
-﻿using PhPopovich.Models.Pages;
+﻿using App.Models.Pages;
 
-namespace PhPopovich.ViewModels.Common
+namespace App.ViewModels.Common
 {
     public class CommonPageViewModel
     {

@@ -1,12 +1,9 @@
-﻿using PhPopovich.Models.Pages;
-using PhPopovich.StaticHelpers;
+﻿using App.Models.Pages;
 
-namespace PhPopovich.ViewModels.Common
+namespace App.ViewModels.Common
 {
     public class FooterViewModel
     {
-        public string CompanyName { get; set; } = App.CompanyName;
-
         public ContactsPageModel ContactsPageModel { get; set; }
 
         public FooterViewModel()

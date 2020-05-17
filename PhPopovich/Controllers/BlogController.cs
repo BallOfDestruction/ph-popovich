@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Linq;
+using App.Models;
+using App.ViewModels.Blog;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using PhPopovich.Models;
-using PhPopovich.ViewModels.Blog;
 
-namespace PhPopovich.Controllers
+namespace App.Controllers
 {
     public class BlogController : CommonController
     {

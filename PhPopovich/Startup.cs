@@ -1,14 +1,24 @@
-﻿using Microsoft.AspNetCore.Authentication.Cookies;
+﻿using App.CMS;
+using App.CMS.Repositories.Admin;
+using App.CMS.Repositories.CmsModels;
+using App.CMS.Repositories.File;
+using App.CMS.Repositories.Image;
+using App.Models;
+using App.Repositories.Cms.Admins;
+using App.Repositories.Cms.CmsModels;
+using App.Repositories.Cms.Files;
+using App.Repositories.Cms.Images;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using PhPopovich.Models;
 
-namespace PhPopovich
+namespace App
 {
     public class Startup
     {
@@ -30,6 +40,52 @@ namespace PhPopovich
                 {
                     options.LoginPath = new Microsoft.AspNetCore.Http.PathString("/Home/Index");
                 });
+
+
+            services.AddSingleton<IImageRepository, ImagesRepository>();
+            services.AddSingleton<ICmsImageModelRepository, ImageCmsFakeRepository>();
+            
+            services.AddSingleton<ICmsAdminRepository, AdminRepository>();
+            
+            services.AddSingleton<ICmsFilesRepository, FileRepository>();
+
+            services.AddSingleton<ICmsCmsModelRepository, CmsModelRepository>();
+
+            
+            services.AddSingleton(new CMSOptions()
+            {
+                SmptCredentialsMail = "support@ph-popovich.com",
+                SmptCredentialsPassword = "8U_f41xu"
+            });
+            
+            services.Configure<RazorViewEngineOptions>(option =>
+            {
+                option.ViewLocationFormats.Add("/CMS/Views/{0}" + RazorViewEngine.ViewExtension);
+                option.ViewLocationFormats.Add("/CMS/Views/{1}/{0}" + RazorViewEngine.ViewExtension);
+                option.ViewLocationFormats.Add("/CMS/Views/Shared/{0}" + RazorViewEngine.ViewExtension);
+                option.ViewLocationFormats.Add("/CMS/Views/Shared/Views/{0}" + RazorViewEngine.ViewExtension);
+                
+                option.AreaViewLocationFormats.Add("/CMS/Views/{0}" + RazorViewEngine.ViewExtension);
+                option.AreaViewLocationFormats.Add("/CMS/Views/{1}/{0}" + RazorViewEngine.ViewExtension);
+                option.AreaViewLocationFormats.Add("/CMS/Views/Shared/{0}" + RazorViewEngine.ViewExtension);
+                option.AreaViewLocationFormats.Add("/CMS/Views/Shared/Views/{0}" + RazorViewEngine.ViewExtension);
+                
+                option.PageViewLocationFormats.Add("/CMS/Views/{0}" + RazorViewEngine.ViewExtension);
+                option.PageViewLocationFormats.Add("/CMS/Views/{1}/{0}" + RazorViewEngine.ViewExtension);
+                option.PageViewLocationFormats.Add("/CMS/Views/Shared/{0}" + RazorViewEngine.ViewExtension);
+                option.PageViewLocationFormats.Add("/CMS/Views/Shared/Views/{0}" + RazorViewEngine.ViewExtension);
+                
+                option.AreaPageViewLocationFormats.Add("/CMS/Views/{0}" + RazorViewEngine.ViewExtension);
+                option.AreaPageViewLocationFormats.Add("/CMS/Views/{1}/{0}" + RazorViewEngine.ViewExtension);
+                option.AreaPageViewLocationFormats.Add("/CMS/Views/Shared/{0}" + RazorViewEngine.ViewExtension);
+                option.AreaPageViewLocationFormats.Add("/CMS/Views/Shared/Views/{0}" + RazorViewEngine.ViewExtension);
+                
+                
+                option.ViewLocationFormats.Add("/{2}/Views/{0}" + RazorViewEngine.ViewExtension);
+                option.ViewLocationFormats.Add("/{2}/Views/{1}/{0}" + RazorViewEngine.ViewExtension);
+                option.ViewLocationFormats.Add("/{2}/Views/Shared/{0}" + RazorViewEngine.ViewExtension);
+                option.ViewLocationFormats.Add("/{2}/Views/Shared/Views/{0}" + RazorViewEngine.ViewExtension);
+            });
 
             services.AddMvc()
                 .AddMvcOptions(p => p.EnableEndpointRouting = false)

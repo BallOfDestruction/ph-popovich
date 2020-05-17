@@ -1,16 +1,16 @@
 ﻿using System.Collections.Generic;
+using App.CMS.StaticHelpers;
+using App.Models;
+using App.Models.Pages;
 using Microsoft.AspNetCore.Http;
-using PhPopovich.Models;
-using PhPopovich.Models.Pages;
-using PhPopovich.StaticHelpers;
 
-namespace PhPopovich.ViewModels.Common
+namespace App.ViewModels.Common
 {
     public class HeaderViewModel
     {
         public IMetaInfo MetaInfo { get; set; }
 
-        public string CompanyName { get; set; } = App.CompanyName;
+        public string CompanyName { get; set; } = "Попович Диана";
 
         public Menu CurrentPage { get; set; }
 

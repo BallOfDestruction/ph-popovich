@@ -1,10 +1,10 @@
 ﻿using System.Linq;
+using App.Models;
+using App.ViewModels.Common;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using PhPopovich.Models;
-using PhPopovich.ViewModels.Common;
 
-namespace PhPopovich.Controllers
+namespace App.Controllers
 {
     public class CommonController : Controller
     {

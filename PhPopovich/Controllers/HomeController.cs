@@ -1,14 +1,14 @@
 ﻿using System.Linq;
+using App.Models;
+using App.ViewModels.About;
+using App.ViewModels.Contacts;
+using App.ViewModels.Home;
+using App.ViewModels.Projects;
+using App.ViewModels.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using PhPopovich.Models;
-using PhPopovich.ViewModels.About;
-using PhPopovich.ViewModels.Contacts;
-using PhPopovich.ViewModels.Home;
-using PhPopovich.ViewModels.Projects;
-using PhPopovich.ViewModels.Services;
 
-namespace PhPopovich.Controllers
+namespace App.Controllers
 {
     public class HomeController : CommonController
     {

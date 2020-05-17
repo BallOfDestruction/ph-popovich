@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using PhPopovich.Controllers.cms;
-using PhPopovich.Models.Pages;
+using App.CMS.Controllers.Attributes;
+using App.Models.Pages;
 
-namespace PhPopovich.Models
+namespace App.Models
 {
     public class ArticleModel : MetaBasePage<ArticleModel>
     {

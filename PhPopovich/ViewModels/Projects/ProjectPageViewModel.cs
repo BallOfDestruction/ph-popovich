@@ -1,7 +1,7 @@
-﻿using PhPopovich.Models;
-using PhPopovich.ViewModels.Common;
+﻿using App.Models;
+using App.ViewModels.Common;
 
-namespace PhPopovich.ViewModels.Projects
+namespace App.ViewModels.Projects
 {
     public class ProjectPageViewModel : CommonPageViewModel<ProjectModel>
     {

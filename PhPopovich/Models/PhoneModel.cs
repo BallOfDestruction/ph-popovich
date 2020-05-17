@@ -1,10 +1,11 @@
 ﻿using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using PhPopovich.Controllers.cms;
-using PhPopovich.Models.Pages;
+using App.CMS.Controllers.Attributes;
+using App.CMS.Models;
+using App.Models.Pages;
 
-namespace PhPopovich.Models
+namespace App.Models
 {
     [Access]
     public class PhoneModel : Entity<PhoneModel>

@@ -1,7 +1,7 @@
-﻿using PhPopovich.Models.Pages;
-using PhPopovich.ViewModels.Common;
+﻿using App.Models.Pages;
+using App.ViewModels.Common;
 
-namespace PhPopovich.ViewModels.About
+namespace App.ViewModels.About
 {
     public class AboutPageViewModel : PartialPageViewModel<AboutPageModel>
     {

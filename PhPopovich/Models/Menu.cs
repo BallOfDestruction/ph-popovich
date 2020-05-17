@@ -1,4 +1,4 @@
-﻿namespace PhPopovich.Models
+﻿namespace App.Models
 {
     public enum Menu
     {

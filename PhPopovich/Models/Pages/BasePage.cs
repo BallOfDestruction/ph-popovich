@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel;
+using App.CMS.Models;
 
-namespace PhPopovich.Models.Pages
+namespace App.Models.Pages
 {
     public abstract class BasePage<T> : Entity<T>, IPage
         where T : IEntity

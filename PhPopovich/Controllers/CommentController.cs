@@ -1,9 +1,9 @@
 ﻿using System.Threading.Tasks;
+using App.Models;
+using App.ViewModels.Comment;
 using Microsoft.AspNetCore.Mvc;
-using PhPopovich.Models;
-using PhPopovich.ViewModels.Comment;
 
-namespace PhPopovich.Controllers
+namespace App.Controllers
 {
     public class CommentController : CommonController
     {

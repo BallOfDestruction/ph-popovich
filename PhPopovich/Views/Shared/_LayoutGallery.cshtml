@@ -1,7 +1,6 @@
-﻿@using PhPopovich.Models
-@using PhPopovich.Models.Pages
-@using PhPopovich.StaticHelpers
-@using PhPopovich.ViewModels.Common
+﻿@using App.Models
+@using App.Models.Pages
+@using App.ViewModels.Common
 @inject Context ContextDb
 @inject Context Database
 @{
@@ -22,7 +21,7 @@
         {
             headerViewModel.MetaInfo = new SimpleMetaInfo()
             {
-                MetaTitle = App.CompanyName
+                MetaTitle = "Попович Диана"
             };
         }
     }

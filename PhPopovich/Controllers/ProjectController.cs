@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Linq;
+using App.Models;
+using App.ViewModels.Projects;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using PhPopovich.Models;
-using PhPopovich.ViewModels.Projects;
 
-namespace PhPopovich.Controllers
+namespace App.Controllers
 {
     public class ProjectController : CommonController
     {
