@@ -252,6 +252,9 @@ namespace App.Migrations
                     b.Property<Guid?>("MainPageModelMetaId")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<string>("OriginalUrl")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("Position")
                         .HasColumnType("int");
 

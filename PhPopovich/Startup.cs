@@ -42,6 +42,8 @@ namespace App
                     options.LoginPath = new Microsoft.AspNetCore.Http.PathString("/Home/Index");
                 });
 
+            var cmsBootstrap = new CmsBootstrap();
+            cmsBootstrap.Build(services);
 
             services.AddScoped<IImageRepository, ImagesRepository>();
             services.AddScoped<ICmsImageModelRepository, ImageCmsFakeRepository>();

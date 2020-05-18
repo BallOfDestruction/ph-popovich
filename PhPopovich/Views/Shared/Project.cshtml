@@ -8,16 +8,11 @@
 
 @if (Model != null)
 {
-    <figure>
-        <img src="@Model.ImageModel.Url" alt="img">
-        <figcaption>
-            @* ReSharper disable once Html.PathError *@
-            <a href="/Project?id=@Model.Id">
-                <div class="w-100 text-center">
-                    @Html.Raw(Model.About)
-                    <p> Смотреть еще </p>
-                </div>
-            </a>
-        </figcaption>
-    </figure>
+    <img src="@Model.ImageModel.Url" alt="img">
+    @Html.Raw(Model.About)
+    @* ReSharper disable once Html.PathError *@
+    <a href="/Project?id=@Model.Id">
+        Смотреть еще
+    </a>
+    <div style="height: 45px"></div>
 }
