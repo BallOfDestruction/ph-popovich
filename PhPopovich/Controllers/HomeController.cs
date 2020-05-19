@@ -14,6 +14,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Internal;
+using ImageModel = App.Models.ImageModel;
 
 namespace App.Controllers
 {
@@ -68,11 +69,43 @@ namespace App.Controllers
 
         public IActionResult CleanImages()
         {
-            CleanImagesWithoutEntity();
+            CleanImagesWithoutReferences();
             
             CleanImagesWithoutEntity();
+            
+            GenerateImagesWithoutOriginalPath();
             
             return RedirectToAction("Index");
+        }
+
+        private void CleanImagesWithoutReferences()
+        {
+            var images = Context.Images.ToList();
+
+            var servicesImages = Context.ServiceModels.Include(w => w.ImageModel).Select(w => w.ImageModel).ToList();
+            var projectImages = Context.ProjectModels.Include(w => w.ImageModel).Select(w => w.ImageModel).ToList();
+            var articleImages = Context.ArticleModels.Include(w => w.ImageModel).Select(w => w.ImageModel).ToList();
+            var blogPageImages = Context.BlogPageModels.Include(w => w.MetaImageModel).Select(w => w.MetaImageModel)
+                .ToList();
+            var mainPageMetaImages = Context.MainPageModels.Include(w => w.MetaImageModel).Select(w => w.MetaImageModel)
+                .ToList();
+            var imagesWithReferences =
+                images.Where(w => w.ProjectModelGalleryId != null || w.MainPageModelGalleryId != null).ToList();
+
+            var allImagesIds = new List<List<ImageModel>>()
+            {
+                servicesImages, projectImages, articleImages, blogPageImages, mainPageMetaImages, imagesWithReferences
+            }.SelectMany(w => w).Where(w => w != null).Select(w => w.Id).ToList();
+
+            foreach (var imageModel in images)
+            {
+                if (!allImagesIds.Contains(imageModel.Id))
+                {
+                    Context.Remove(imageModel);
+                }
+            }
+
+            Context.SaveChanges();
         }
 
         private void CleanImagesWithoutEntity()
